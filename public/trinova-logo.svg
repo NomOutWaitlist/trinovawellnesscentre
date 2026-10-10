@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 130" fill="none">
+  <!-- Trinova Wellness Centre Official Vector Logo -->
+  <defs>
+    <linearGradient id="leafGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00C853" />
+      <stop offset="60%" stop-color="#00A651" />
+      <stop offset="100%" stop-color="#006837" />
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#003FA8" />
+      <stop offset="100%" stop-color="#00297A" />
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#0033A0" flood-opacity="0.15" />
+    </filter>
+  </defs>
+
+  <!-- Botanical Leaf Element (Organic Curving Leaf Accent) -->
+  <g transform="translate(18, 12)">
+    <!-- Main leaf body -->
+    <path d="M42 4 C18 10 2 34 2 64 C2 94 22 108 48 106 C72 104 88 84 86 54 C84 26 62 10 42 4 Z" fill="url(#leafGrad)" />
+    <!-- Leaf vein and inner contour for rich organic depth -->
+    <path d="M42 6 C42 36 34 68 12 90" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.75" />
+    <path d="M35 34 C44 42 54 48 68 50" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" opacity="0.6" />
+    <path d="M30 52 C38 60 48 66 60 68" stroke="#FFFFFF" stroke-width="1.8" stroke-linecap="round" opacity="0.55" />
+    <path d="M24 70 C30 76 38 80 48 82" stroke="#FFFFFF" stroke-width="1.5" stroke-linecap="round" opacity="0.5" />
+    <!-- Secondary small vitality sprout leaf -->
+    <path d="M48 6 C56 0 68 2 74 10 C80 18 78 28 70 32 C60 36 52 24 48 6 Z" fill="#70D800" opacity="0.85" />
+  </g>
+
+  <!-- Script Typography: Trinova -->
+  <g id="brand-wordmark" transform="translate(108, 20)">
+    <!-- Stylized script representation of Trinova in royal blue with custom calligraphic flourishes -->
+    <text x="0" y="58" font-family="'Brush Script MT', 'Snell Roundhand', 'Great Vibes', 'Caveat', 'Segoe Script', 'Lucida Handwriting', cursive, sans-serif" font-size="64" font-weight="bold" font-style="italic" fill="url(#blueGrad)" letter-spacing="1">
+      Trinova
+    </text>
+  </g>
+
+  <!-- Subtitle: WELLNESS CENTRE in uppercase -->
+  <g id="brand-tagline" transform="translate(112, 108)">
+    <text x="0" y="0" font-family="'Montserrat', 'Helvetica Neue', Arial, sans-serif" font-size="15" font-weight="800" fill="#006837" letter-spacing="7">
+      WELLNESS CENTRE
+    </text>
+  </g>
+</svg>
