@@ -137,7 +137,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           {/* Clinic Interior Showcase with Stats Bar */}
           <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 group">
             <img
-              src="/src/assets/images/trinova_clinic_interior_1791561947732.jpg"
+              src="/images/trinova_clinic_interior_1791561947732.jpg"
               alt="Trinova Wellness Centre clinic interior in Brampton"
               className="w-full h-[360px] sm:h-[480px] object-cover object-center group-hover:scale-102 transition duration-700"
             />
@@ -399,7 +399,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
           <div className="lg:col-span-6 h-full min-h-[340px]">
             <img
-              src="/src/assets/images/neurofeedback_session_1791561964712.jpg"
+              src="/images/neurofeedback_session_1791561964712.jpg"
               alt="BrainCore neurofeedback session in luxury suite"
               className="w-full h-full object-cover object-center"
             />
@@ -422,7 +422,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         <div className="bg-slate-50 rounded-3xl border border-slate-200/80 p-8 sm:p-12 mb-10 flex flex-col md:flex-row items-center gap-8">
           <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden shadow-md shrink-0 border-2 border-white">
             <img
-              src="/src/assets/images/dr_jennifer_anthony_1791561981144.jpg"
+              src="/images/dr_jennifer_anthony_1791561981144.jpg"
               alt="Dr. Jennifer Anthony, Founder & Clinical Director"
               className="w-full h-full object-cover"
             />
