@@ -94,24 +94,23 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
   return (
     <div className="space-y-24 pb-24">
       {/* Cinematic Hero Section */}
-      <section className="relative overflow-hidden pt-12 sm:pt-16 pb-8">
+      <section className="clinic-intro relative overflow-hidden pt-8 sm:pt-10 pb-8">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Top Location Pill */}
           <div className="text-center mb-6">
-            <div className="inline-flex items-center gap-2 bg-[#E8F8F0] px-4 py-1.5 rounded-full text-xs font-bold text-[#006837] uppercase tracking-wider">
-              <MapPin className="w-3.5 h-3.5 text-[#00A651]" />
-              <span>Serving Brampton, Mississauga & Peel Region · 178 John St</span>
+            <div className="inline-flex items-center justify-center gap-2 text-sm text-muted-foreground">
+              <MapPin className="w-4 h-4 shrink-0 text-leaf-green" />
+              <span>Unit 204, 178 John St, Brampton</span>
             </div>
           </div>
 
           {/* Simple, Impactful Headline */}
           <div className="text-center max-w-4xl mx-auto mb-10">
-            <h1 className="font-heading text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#0033A0] tracking-tight leading-[1.08] mb-6">
-              Complete healthcare. <br />
-              <span className="text-[#006837]">All under one roof.</span>
+            <h1 className="font-heading text-3xl sm:text-5xl font-semibold text-trinova-blue leading-tight mb-5">
+              Trinova Wellness Centre
             </h1>
             <p className="text-base sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-              Pain relief, therapy, drug-free brain training, and gut health. Eight licensed specialists collaborating together in Brampton, just minutes from Mississauga. Select nutrition and psychological services available virtually from anywhere.
+              Chiropractic, massage therapy, psychotherapy, neurofeedback and nutrition care in Brampton. A collaborative team, with in-person appointments and select virtual services.
             </p>
           </div>
 
@@ -135,16 +134,15 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
 
           {/* Clinic Interior Showcase with Stats Bar */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-slate-200/80 group">
+          <div className="overflow-hidden border border-border rounded-md">
             <img
               src="/images/trinova_clinic_interior_1791561947732.jpg"
               alt="Trinova Wellness Centre clinic interior in Brampton"
-              className="w-full h-[360px] sm:h-[480px] object-cover object-center group-hover:scale-102 transition duration-700"
+              className="w-full h-[240px] sm:h-[380px] object-cover object-center"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent" />
             
             {/* Floating Glass Bar */}
-            <div className="absolute bottom-6 left-6 right-6 flex flex-col sm:flex-row items-center justify-between gap-4 p-5 rounded-2xl bg-white/95 backdrop-blur-md border border-white/40 shadow-lg text-slate-900">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 px-5 py-4 bg-background border-t border-border text-foreground">
               <div className="flex items-center gap-6 text-xs font-bold text-slate-700 flex-wrap justify-center sm:justify-start">
                 <div className="flex items-center gap-2">
                   <span className="w-2.5 h-2.5 rounded-full bg-[#00A651]" />
