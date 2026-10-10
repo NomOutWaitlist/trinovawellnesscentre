@@ -242,3 +242,41 @@ h1, h2, h3, h4, h5, h6, .font-heading {
   border-color: #002270;
   color: #002270;
 }
+
+/* The supplied logo retains its original lettering and colors on every surface. */
+.trinova-logo {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  width: 224px;
+  max-width: 100%;
+}
+.trinova-logo img { display: block; width: 100%; height: auto; }
+.trinova-logo--sm { width: 168px; }
+.trinova-logo--lg { width: 280px; }
+.trinova-logo--xl { width: 336px; }
+.trinova-logo--on-dark {
+  background: var(--background);
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+.trinova-logo--name-only { overflow: hidden; }
+.trinova-logo--name-only img { margin-bottom: -9%; }
+
+/* Restrained clinic presentation, without changing the existing page flows. */
+main .rounded-3xl, main .rounded-2xl { border-radius: 8px; }
+main .shadow-2xl, main .shadow-xl, main .shadow-lg { box-shadow: none; }
+main .tracking-tight, main .tracking-tighter { letter-spacing: 0; }
+.btn-pill-leaf, .btn-pill-blue, .btn-pill-outline {
+  border-radius: 6px;
+  box-shadow: none;
+  font-weight: 600;
+}
+.btn-pill-leaf:hover, .btn-pill-blue:hover { box-shadow: none; transform: none; }
+.clinic-intro h1 { text-wrap: balance; }
+@media (max-width: 480px) {
+  header .trinova-logo { width: 190px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
