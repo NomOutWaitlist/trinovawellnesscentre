@@ -24,10 +24,10 @@ const row = (k: string, v: string) =>
 export const sendBookingEmails = createServerFn({ method: "POST" })
   .inputValidator((d) => schema.parse(d))
   .handler(async ({ data }) => {
-    const key = process.env.RESEND_API_KEY;
+    const key = process.env['RESEND_API_KEY'];
     if (!key) return { ok: false, error: "Email not configured" };
-    const from = process.env.RESEND_FROM || "Trinova Wellness Centre <onboarding@resend.dev>";
-    const clinic = process.env.CLINIC_NOTIFY_EMAIL || "trinovawellnesscentre@gmail.com";
+    const from = process.env['RESEND_FROM'] || "Trinova Wellness Centre <onboarding@resend.dev>";
+    const clinic = process.env['CLINIC_NOTIFY_EMAIL'] || "trinovawellnesscentre@gmail.com";
 
     const details = `<table style="font-family:Arial,sans-serif;font-size:14px">
 ${row("Reference", data.referenceNumber)}${row("Care category", data.category)}
