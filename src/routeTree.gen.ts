@@ -10,33 +10,141 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as AreasServedRouteImport } from './routes/areas-served'
+import { Route as BookRouteImport } from './routes/book'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as PortalRouteImport } from './routes/portal'
+import { Route as ReferralRouteImport } from './routes/referral'
+import { Route as ServicesRouteImport } from './routes/services'
+import { Route as ProgramsBalanceRouteImport } from './routes/programs.balance'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AreasServedRoute = AreasServedRouteImport.update({
+  id: '/areas-served',
+  path: '/areas-served',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PortalRoute = PortalRouteImport.update({
+  id: '/portal',
+  path: '/portal',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ReferralRoute = ReferralRouteImport.update({
+  id: '/referral',
+  path: '/referral',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgramsBalanceRoute = ProgramsBalanceRouteImport.update({
+  id: '/programs/balance',
+  path: '/programs/balance',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/areas-served': typeof AreasServedRoute
+  '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
+  '/portal': typeof PortalRoute
+  '/referral': typeof ReferralRoute
+  '/services': typeof ServicesRoute
+  '/programs/balance': typeof ProgramsBalanceRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/areas-served': typeof AreasServedRoute
+  '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
+  '/portal': typeof PortalRoute
+  '/referral': typeof ReferralRoute
+  '/services': typeof ServicesRoute
+  '/programs/balance': typeof ProgramsBalanceRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/about': typeof AboutRoute
+  '/areas-served': typeof AreasServedRoute
+  '/book': typeof BookRoute
+  '/contact': typeof ContactRoute
+  '/portal': typeof PortalRoute
+  '/referral': typeof ReferralRoute
+  '/services': typeof ServicesRoute
+  '/programs/balance': typeof ProgramsBalanceRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/areas-served'
+    | '/book'
+    | '/contact'
+    | '/portal'
+    | '/referral'
+    | '/services'
+    | '/programs/balance'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/about'
+    | '/areas-served'
+    | '/book'
+    | '/contact'
+    | '/portal'
+    | '/referral'
+    | '/services'
+    | '/programs/balance'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/areas-served'
+    | '/book'
+    | '/contact'
+    | '/portal'
+    | '/referral'
+    | '/services'
+    | '/programs/balance'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AboutRoute: typeof AboutRoute
+  AreasServedRoute: typeof AreasServedRoute
+  BookRoute: typeof BookRoute
+  ContactRoute: typeof ContactRoute
+  PortalRoute: typeof PortalRoute
+  ReferralRoute: typeof ReferralRoute
+  ServicesRoute: typeof ServicesRoute
+  ProgramsBalanceRoute: typeof ProgramsBalanceRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -48,11 +156,75 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/areas-served': {
+      id: '/areas-served'
+      path: '/areas-served'
+      fullPath: '/areas-served'
+      preLoaderRoute: typeof AreasServedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/portal': {
+      id: '/portal'
+      path: '/portal'
+      fullPath: '/portal'
+      preLoaderRoute: typeof PortalRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/referral': {
+      id: '/referral'
+      path: '/referral'
+      fullPath: '/referral'
+      preLoaderRoute: typeof ReferralRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/programs/balance': {
+      id: '/programs/balance'
+      path: '/programs/balance'
+      fullPath: '/programs/balance'
+      preLoaderRoute: typeof ProgramsBalanceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AboutRoute: AboutRoute,
+  AreasServedRoute: AreasServedRoute,
+  BookRoute: BookRoute,
+  ContactRoute: ContactRoute,
+  PortalRoute: PortalRoute,
+  ReferralRoute: ReferralRoute,
+  ServicesRoute: ServicesRoute,
+  ProgramsBalanceRoute: ProgramsBalanceRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
