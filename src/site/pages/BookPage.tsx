@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { saveTriageBooking } from '../utils/storage';
+import { sendBookingEmails } from '@/lib/booking-email.functions';
 import { CLINIC_INFO, PRACTITIONERS } from '../data/clinicData';
 import { TriageBookingSubmission } from '../types/clinic';
 import { 
@@ -166,6 +167,21 @@ export const BookPage: React.FC<BookPageProps> = ({
       priorCareNotes: priorCareNotes.trim(),
       urgency: 'Priority'
     });
+
+    sendBookingEmails({ data: {
+      referenceNumber: newBooking.referenceNumber,
+      category: newBooking.category,
+      concerns: newBooking.concerns,
+      concernDetails: newBooking.concernDetails,
+      preferredDays: newBooking.preferredDays,
+      preferredTimeWindows: newBooking.preferredTimeWindows,
+      deliveryPreference: newBooking.deliveryPreference,
+      patientName: newBooking.patientName,
+      patientPhone: newBooking.patientPhone,
+      patientEmail: newBooking.patientEmail,
+      priorCareNotes: newBooking.priorCareNotes,
+    } }).then(r => { if (!r.ok) console.error('Booking email failed', r.error); })
+      .catch(err => console.error('Booking email failed', err));
 
     setSubmissionResult(newBooking);
     window.scrollTo({ top: 0, behavior: 'smooth' });
