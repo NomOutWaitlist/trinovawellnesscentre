@@ -2,7 +2,7 @@ import { useRouter } from "@tanstack/react-router";
 
 export function useSiteNav() {
   const router = useRouter();
-  return (path: string, opts?: { category?: string; practitioner?: string }) => {
+  return (path: string, opts?: { category?: string | undefined; practitioner?: string | undefined }) => {
     const params = new URLSearchParams();
     if (opts?.category) params.set("category", opts.category);
     if (opts?.practitioner) params.set("practitioner", opts.practitioner);

@@ -4,8 +4,8 @@ import { useSiteNav } from "@/site/nav";
 
 export const Route = createFileRoute("/book")({
   validateSearch: (s: Record<string, unknown>): { category?: string; practitioner?: string } => ({
-    ...(typeof s.category === "string" ? { category: s.category } : {}),
-    ...(typeof s.practitioner === "string" ? { practitioner: s.practitioner } : {}),
+    ...(typeof s["category"] === "string" ? { category: s["category"] } : {}),
+    ...(typeof s["practitioner"] === "string" ? { practitioner: s["practitioner"] } : {}),
   }),
   head: () => ({
     meta: [
