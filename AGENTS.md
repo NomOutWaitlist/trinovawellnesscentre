@@ -12,4 +12,5 @@
 - Imported Trinova site pages live in src/site and are wrapped by thin route files in src/routes; navigation goes through src/site/nav.ts so original page callbacks keep working.
 - Form submissions (bookings, referrals, contact) are stored in the browser only, matching the original site; move to Lovable Cloud if shared data is needed.
 
-- Render all Trinova logo placements through the shared TrinovaLogo component using the uploaded CDN asset; this preserves one consistent brand image across the site.
+- Render all Trinova logo placements through the shared TrinovaLogo component using public/trinova-logo.webp; site images live in public/ so they deploy with any host (e.g. Vercel).
+- Booking emails go through src/lib/booking-email.functions.ts calling Resend directly with RESEND_API_KEY (optional RESEND_FROM, CLINIC_NOTIFY_EMAIL); keeps email working off-platform.
