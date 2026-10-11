@@ -7,7 +7,8 @@ export function useSiteNav() {
     if (opts?.category) params.set("category", opts.category);
     if (opts?.practitioner) params.set("practitioner", opts.practitioner);
     const qs = params.toString();
-    router.history.push(qs ? `${path}?${qs}` : path);
-    if (typeof window !== "undefined") window.scrollTo({ top: 0, behavior: "smooth" });
+    const href = qs ? `${path}?${qs}` : path;
+    const jumpsToForm = href.includes("concern=");
+    void router.navigate({ href, resetScroll: !jumpsToForm });
   };
 }
