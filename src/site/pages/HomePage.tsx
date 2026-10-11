@@ -107,10 +107,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           {/* Simple, Impactful Headline */}
           <div className="text-center max-w-4xl mx-auto mb-10">
             <h1 className="font-heading text-3xl sm:text-5xl font-semibold text-trinova-blue leading-tight mb-5">
-              Trinova Wellness Centre
+              Comprehensive Healthcare That Actually Listens.
             </h1>
             <p className="text-base sm:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed font-normal">
-              Chiropractic, massage therapy, psychotherapy, neurofeedback and nutrition care in Brampton. A collaborative team, with in-person appointments and select virtual services.
+              Brampton’s integrated wellness centre bringing chiropractic, BrainCore neurofeedback, registered massage, psychotherapy, and nutrition together under one collaborative roof.
             </p>
           </div>
 
@@ -163,6 +163,21 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               </div>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Youth Focus banner */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="rounded-md border border-border bg-trinova-blue-light p-6 sm:p-8 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <span className="text-xs font-bold uppercase text-leaf-green">New · Kids & Teens</span>
+            <h2 className="font-heading text-xl sm:text-2xl font-bold text-trinova-blue mt-1">Is endless scrolling stealing your child’s focus?</h2>
+            <p className="text-sm text-muted-foreground mt-1">Drug-free brain training and teen counselling to rebuild attention, sleep and calm.</p>
+          </div>
+          <button onClick={() => onNavigate('/youth-focus')} className="btn-pill-leaf text-sm px-6 py-3 cursor-pointer shrink-0">
+            <span>Learn more</span>
+            <ChevronRight className="w-4 h-4" />
+          </button>
         </div>
       </section>
 
@@ -238,7 +253,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 Book a consultation for this symptom in Brampton.
               </div>
               <button
-                onClick={() => onNavigate('/book')}
+                onClick={() => onNavigate(`/book?${new URLSearchParams({ category: activeSolution.categoryToBook, concern: selectedIssue }).toString()}`)}
                 className="btn-pill-leaf w-full justify-center text-xs py-3 shadow-md cursor-pointer"
               >
                 <span>Book for This Concern</span>
