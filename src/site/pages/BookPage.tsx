@@ -47,7 +47,7 @@ export const BookPage: React.FC<BookPageProps> = ({
   const [selectedConcerns, setSelectedConcerns] = useState<string[]>(initialConcern ? [initialConcern] : []);
   React.useEffect(() => {
     if (!initialConcern) return;
-    const t = setTimeout(() => document.getElementById("booking-form")?.scrollIntoView({ behavior: "smooth", block: "start" }), 150);
+    const t = setTimeout(() => document.getElementById("booking-form")?.scrollIntoView({ behavior: "smooth", block: "start" }), 400);
     return () => clearTimeout(t);
   }, [initialConcern]);
   const [concernDetails, setConcernDetails] = useState<string>('');
