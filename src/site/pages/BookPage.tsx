@@ -25,17 +25,18 @@ import {
 interface BookPageProps {
   initialCategory?: string;
   initialPractitioner?: string;
+  initialConcern?: string;
   onNavigateHome: () => void;
   onNavigateToPortal: () => void;
 }
 
 export const BookPage: React.FC<BookPageProps> = ({ 
   initialCategory, 
-  initialPractitioner, 
+  initialPractitioner, initialConcern,
   onNavigateHome,
   onNavigateToPortal
 }) => {
-  const [currentStep, setCurrentStep] = useState<number>(1);
+  const [currentStep, setCurrentStep] = useState<number>(initialConcern ? 2 : 1);
 
   // Step 1: Care Category
   const [selectedCategory, setSelectedCategory] = useState<string>(
@@ -43,7 +44,12 @@ export const BookPage: React.FC<BookPageProps> = ({
   );
 
   // Specific concerns
-  const [selectedConcerns, setSelectedConcerns] = useState<string[]>([]);
+  const [selectedConcerns, setSelectedConcerns] = useState<string[]>(initialConcern ? [initialConcern] : []);
+  React.useEffect(() => {
+    if (!initialConcern) return;
+    const t = setTimeout(() => document.getElementById("booking-form")?.scrollIntoView({ behavior: "smooth", block: "start" }), 150);
+    return () => clearTimeout(t);
+  }, [initialConcern]);
   const [concernDetails, setConcernDetails] = useState<string>('');
 
   // Step 2: Scheduling & Delivery Preferences
@@ -304,7 +310,7 @@ export const BookPage: React.FC<BookPageProps> = ({
       </div>
 
       {/* Main Form Container */}
-      <div className="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-10 shadow-sm">
+      <div id="booking-form" className="scroll-mt-32 bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-10 shadow-sm">
         {errorMsg && (
           <div className="mb-6 p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs flex items-center gap-2">
             <AlertCircle className="w-4 h-4 shrink-0" />
