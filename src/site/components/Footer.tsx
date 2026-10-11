@@ -71,6 +71,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                   The Balance Program (14-Day Gut Reset)
                 </button>
               </li>
+              <li>
+                <button onClick={() => handleLink('/youth-focus')} className="text-emerald-300 hover:text-white font-medium cursor-pointer text-left">
+                  Youth & Teen Focus Program
+                </button>
+              </li>
             </ul>
           </div>
 
