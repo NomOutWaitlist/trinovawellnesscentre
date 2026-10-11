@@ -444,10 +444,10 @@ export const ReferralPage: React.FC = () => {
                         : 'bg-amber-100 text-amber-800'
                     }`}
                   >
-                    {ref.status}
+                    {ref.status === 'Invited' ? 'Awaiting attended visit' : ref.status}
                   </span>
                   <div className="font-heading font-bold text-[#00A651] text-xs">
-                    +{ref.pointsEarned > 0 ? ref.pointsEarned : 100} Pts
+                    {ref.status === 'Points Awarded' ? '+100 Pts paid' : ref.status === 'Invited' ? 'Pending' : '+100 Pts approved'}
                   </div>
                 </div>
               </div>
