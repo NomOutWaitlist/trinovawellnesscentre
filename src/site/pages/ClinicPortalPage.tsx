@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { getTriageBookings, updateBookingStatus, getReferrals } from '../utils/storage';
+import { getTriageBookings, updateBookingStatus, getReferrals, updateReferralStatus } from '../utils/storage';
 import { TriageBookingSubmission, ReferralSubmission } from '../types/clinic';
 import { 
   UserCheck, 
@@ -238,7 +238,7 @@ export const ClinicPortalPage: React.FC<ClinicPortalPageProps> = ({ onNavigateTo
                 Patient Referral Log & Point Credits
               </h2>
               <p className="text-xs text-slate-500">
-                100 points are awarded to the referring patient once the referee starts care.
+                Rewards are paid only after the referred patient attends their booked appointment.
               </p>
             </div>
           </div>
@@ -270,8 +270,22 @@ export const ClinicPortalPage: React.FC<ClinicPortalPageProps> = ({ onNavigateTo
                 </div>
 
                 <div className="pt-2 border-t border-slate-200 flex items-center justify-between text-xs">
-                  <span className="text-slate-500 font-medium">Points Accrued:</span>
-                  <span className="font-bold text-[#00A651] text-sm">+{ref.pointsEarned > 0 ? ref.pointsEarned : 100} Points</span>
+                  <span className="text-slate-500 font-medium">Reward:</span>
+                  <span className="font-bold text-sm text-[#00A651]">
+                    {ref.status === 'Points Awarded' ? '100 Points paid' : ref.status === 'Invited' ? 'Locked until attended' : '100 Points ready to pay'}
+                  </span>
+                </div>
+                <div className="flex flex-wrap gap-2">
+                  {ref.status === 'Invited' && (
+                    <button type="button" onClick={() => setReferrals(updateReferralStatus(ref.id, 'Consultation Attended'))} className="text-xs font-bold px-3 py-1.5 rounded-md bg-[#0033A0] text-white">
+                      Mark Booking Attended
+                    </button>
+                  )}
+                  {(ref.status === 'Consultation Attended' || ref.status === 'Care Started') && (
+                    <button type="button" onClick={() => setReferrals(updateReferralStatus(ref.id, 'Points Awarded'))} className="text-xs font-bold px-3 py-1.5 rounded-md bg-[#00A651] text-white">
+                      Pay Reward
+                    </button>
+                  )}
                 </div>
               </div>
             ))}

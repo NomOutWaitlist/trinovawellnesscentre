@@ -159,6 +159,17 @@ export function saveReferral(referral: Omit<ReferralSubmission, 'id' | 'timestam
   return newRef;
 }
 
+/** Reward is only payable once the referred patient has attended their booking. */
+export function updateReferralStatus(id: string, status: ReferralSubmission['status']): ReferralSubmission[] {
+  const updated = getReferrals().map((r) => {
+    if (r.id !== id) return r;
+    if (status === 'Points Awarded' && r.status === 'Invited') return r;
+    return { ...r, status, pointsEarned: status === 'Points Awarded' ? 100 : 0 };
+  });
+  localStorage.setItem(REFERRALS_STORAGE_KEY, JSON.stringify(updated));
+  return updated;
+}
+
 export function saveContactInquiry(inquiry: Omit<ContactInquiry, 'id' | 'timestamp'>): ContactInquiry {
   const newInq: ContactInquiry = {
     ...inquiry,
