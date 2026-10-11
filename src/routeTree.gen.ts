@@ -17,6 +17,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as PortalRouteImport } from './routes/portal'
 import { Route as ReferralRouteImport } from './routes/referral'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as YouthFocusRouteImport } from './routes/youth-focus'
 import { Route as ProgramsBalanceRouteImport } from './routes/programs.balance'
 
 const IndexRoute = IndexRouteImport.update({
@@ -59,6 +60,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const YouthFocusRoute = YouthFocusRouteImport.update({
+  id: '/youth-focus',
+  path: '/youth-focus',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const ProgramsBalanceRoute = ProgramsBalanceRouteImport.update({
   id: '/programs/balance',
   path: '/programs/balance',
@@ -74,6 +80,7 @@ export interface FileRoutesByFullPath {
   '/portal': typeof PortalRoute
   '/referral': typeof ReferralRoute
   '/services': typeof ServicesRoute
+  '/youth-focus': typeof YouthFocusRoute
   '/programs/balance': typeof ProgramsBalanceRoute
 }
 export interface FileRoutesByTo {
@@ -85,6 +92,7 @@ export interface FileRoutesByTo {
   '/portal': typeof PortalRoute
   '/referral': typeof ReferralRoute
   '/services': typeof ServicesRoute
+  '/youth-focus': typeof YouthFocusRoute
   '/programs/balance': typeof ProgramsBalanceRoute
 }
 export interface FileRoutesById {
@@ -97,6 +105,7 @@ export interface FileRoutesById {
   '/portal': typeof PortalRoute
   '/referral': typeof ReferralRoute
   '/services': typeof ServicesRoute
+  '/youth-focus': typeof YouthFocusRoute
   '/programs/balance': typeof ProgramsBalanceRoute
 }
 export interface FileRouteTypes {
@@ -110,6 +119,7 @@ export interface FileRouteTypes {
     | '/portal'
     | '/referral'
     | '/services'
+    | '/youth-focus'
     | '/programs/balance'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -121,6 +131,7 @@ export interface FileRouteTypes {
     | '/portal'
     | '/referral'
     | '/services'
+    | '/youth-focus'
     | '/programs/balance'
   id:
     | '__root__'
@@ -132,6 +143,7 @@ export interface FileRouteTypes {
     | '/portal'
     | '/referral'
     | '/services'
+    | '/youth-focus'
     | '/programs/balance'
   fileRoutesById: FileRoutesById
 }
@@ -144,6 +156,7 @@ export interface RootRouteChildren {
   PortalRoute: typeof PortalRoute
   ReferralRoute: typeof ReferralRoute
   ServicesRoute: typeof ServicesRoute
+  YouthFocusRoute: typeof YouthFocusRoute
   ProgramsBalanceRoute: typeof ProgramsBalanceRoute
 }
 
@@ -205,6 +218,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/youth-focus': {
+      id: '/youth-focus'
+      path: '/youth-focus'
+      fullPath: '/youth-focus'
+      preLoaderRoute: typeof YouthFocusRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/programs/balance': {
       id: '/programs/balance'
       path: '/programs/balance'
@@ -224,6 +244,7 @@ const rootRouteChildren: RootRouteChildren = {
   PortalRoute: PortalRoute,
   ReferralRoute: ReferralRoute,
   ServicesRoute: ServicesRoute,
+  YouthFocusRoute: YouthFocusRoute,
   ProgramsBalanceRoute: ProgramsBalanceRoute,
 }
 export const routeTree = rootRouteImport
