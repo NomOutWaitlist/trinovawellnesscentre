@@ -301,7 +301,7 @@ export const BookPage: React.FC<BookPageProps> = ({
       </div>
 
       {/* 3 Clean Step Indicators */}
-      <div className="flex items-center justify-center gap-3 sm:gap-6 mb-10">
+      <div id="booking-wizard" className="scroll-mt-28 flex items-center justify-center gap-3 sm:gap-6 mb-10">
         {[
           { num: 1, label: '1. What You Need' },
           { num: 2, label: '2. Your Schedule' },
@@ -309,7 +309,7 @@ export const BookPage: React.FC<BookPageProps> = ({
         ].map(step => (
           <button
             key={step.num}
-            onClick={() => setCurrentStep(step.num)}
+            onClick={() => goToStep(step.num)}
             className={`px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 cursor-pointer ${
               currentStep === step.num
                 ? 'bg-[#0033A0] text-white shadow-sm'
@@ -395,7 +395,7 @@ export const BookPage: React.FC<BookPageProps> = ({
                 Any specific symptoms? (Optional)
               </label>
               <div className="flex flex-wrap gap-2">
-                {quickSymptoms.map(symp => {
+                {[...quickSymptoms, ...selectedConcerns.filter(c => !quickSymptoms.includes(c))].map(symp => {
                   const isChecked = selectedConcerns.includes(symp);
                   return (
                     <button
