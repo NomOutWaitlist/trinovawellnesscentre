@@ -9,6 +9,14 @@ export function useSiteNav() {
     const qs = params.toString();
     const href = qs ? `${path}?${qs}` : path;
     const jumpsToForm = href.includes("concern=");
-    void router.navigate({ href, resetScroll: !jumpsToForm });
+    const [to, queryString] = href.split("?");
+    const search = queryString
+      ? Object.fromEntries(new URLSearchParams(queryString))
+      : {};
+    void router.navigate({
+      to: to || "/",
+      search,
+      resetScroll: !jumpsToForm,
+    });
   };
 }
