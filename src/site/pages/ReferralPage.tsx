@@ -391,65 +391,6 @@ export const ReferralPage: React.FC = () => {
           </form>
         </div>
       </section>
-
-      {/* Community Referral Status Tracker */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200">
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h3 className="font-heading font-extrabold text-lg text-[#0033A0]">
-                Recent Referral Activity
-              </h3>
-              <p className="text-xs text-slate-500">
-                Track status and point credit confirmations for referred individuals.
-              </p>
-            </div>
-            <span className="text-xs font-bold text-[#006837] bg-[#E8F8F0] px-3 py-1 rounded-full">
-              {referralList.length} Active Records
-            </span>
-          </div>
-
-          <div className="space-y-3">
-            {referralList.map((ref) => (
-              <div
-                key={ref.id}
-                className="bg-white rounded-xl p-4 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
-              >
-                <div>
-                  <div className="font-bold text-slate-800 text-sm">
-                    {ref.refereeName}
-                  </div>
-                  <div className="text-slate-500">
-                    Referred by <strong>{ref.referrerName}</strong> for {ref.serviceInterest}
-                  </div>
-                  {ref.personalNote && (
-                    <div className="text-slate-400 italic text-[11px] mt-1">
-                      &ldquo;{ref.personalNote}&rdquo;
-                    </div>
-                  )}
-                </div>
-
-                <div className="flex items-center gap-3 shrink-0">
-                  <span
-                    className={`font-semibold px-2.5 py-1 rounded-full text-[11px] ${
-                      ref.status === 'Care Started'
-                        ? 'bg-emerald-100 text-[#006837]'
-                        : ref.status === 'Consultation Attended'
-                        ? 'bg-blue-100 text-[#0033A0]'
-                        : 'bg-amber-100 text-amber-800'
-                    }`}
-                  >
-                    {ref.status === 'Invited' ? 'Awaiting attended visit' : ref.status}
-                  </span>
-                  <div className="font-heading font-bold text-[#00A651] text-xs">
-                    {ref.status === 'Points Awarded' ? '+100 Pts paid' : ref.status === 'Invited' ? 'Pending' : '+100 Pts approved'}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
     </div>
   );
 };
