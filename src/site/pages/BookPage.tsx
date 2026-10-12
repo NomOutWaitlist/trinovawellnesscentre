@@ -74,6 +74,7 @@ export const BookPage: React.FC<BookPageProps> = ({
   const [priorCareNotes, setPriorCareNotes] = useState<string>(
     initialPractitioner ? `Preferred Doctor: ${initialPractitioner}` : ''
   );
+  const [referredBy, setReferredBy] = useState<string>('');
 
   // Completion State
   const [submissionResult, setSubmissionResult] = useState<TriageBookingSubmission | null>(null);
@@ -180,7 +181,10 @@ export const BookPage: React.FC<BookPageProps> = ({
       patientName: patientName.trim(),
       patientPhone: patientPhone.trim(),
       patientEmail: patientEmail.trim(),
-      priorCareNotes: priorCareNotes.trim(),
+      priorCareNotes: [
+        priorCareNotes.trim(),
+        referredBy.trim() ? `Referred by: ${referredBy.trim()}` : ''
+      ].filter(Boolean).join(' | '),
       urgency: 'Priority'
     });
 
