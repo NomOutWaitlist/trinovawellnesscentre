@@ -433,7 +433,7 @@ export const BookPage: React.FC<BookPageProps> = ({
             <div className="flex justify-end pt-4">
               <button
                 type="button"
-                onClick={() => setCurrentStep(2)}
+                onClick={() => goToStep(2)}
                 className="btn-pill-leaf text-sm px-8 py-3.5 cursor-pointer shadow-md flex items-center gap-2"
               >
                 <span>Continue to Step 2</span>
@@ -594,7 +594,7 @@ export const BookPage: React.FC<BookPageProps> = ({
             <div className="flex items-center justify-between pt-4 border-t border-slate-100">
               <button
                 type="button"
-                onClick={() => setCurrentStep(1)}
+                onClick={() => goToStep(1)}
                 className="px-5 py-2.5 rounded-full text-xs font-bold text-slate-600 hover:bg-slate-100 cursor-pointer flex items-center gap-1.5"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -602,7 +602,7 @@ export const BookPage: React.FC<BookPageProps> = ({
               </button>
               <button
                 type="button"
-                onClick={() => setCurrentStep(3)}
+                onClick={() => goToStep(3)}
                 className="btn-pill-leaf text-sm px-8 py-3.5 cursor-pointer shadow-md flex items-center gap-2"
               >
                 <span>Continue to Details</span>
