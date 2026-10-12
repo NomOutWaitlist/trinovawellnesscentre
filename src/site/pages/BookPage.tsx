@@ -679,6 +679,35 @@ export const BookPage: React.FC<BookPageProps> = ({
                   className="w-full text-sm p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0033A0]/30"
                 />
               </div>
+
+              <div className="space-y-1.5 sm:col-span-2">
+                <label className="text-xs font-bold text-slate-700 block">
+                  Were you referred by a friend or practitioner? (Optional)
+                </label>
+                <input
+                  type="text"
+                  value={referredBy}
+                  onChange={e => setReferredBy(e.target.value)}
+                  placeholder="e.g. Their full name or referral code, so we can credit their reward"
+                  className="w-full text-sm p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0033A0]/30"
+                />
+                <p className="text-[11px] text-slate-500">
+                  Referral rewards are credited to them only after you attend your first in-clinic consultation.
+                </p>
+              </div>
+            </div>
+
+            {/* Selected Format Confirmation */}
+            <div className="p-3.5 rounded-2xl bg-blue-50/70 border border-[#0033A0]/20 text-xs text-slate-700 flex items-center gap-2.5">
+              <MapPin className="w-4 h-4 text-[#0033A0] shrink-0" />
+              <div>
+                <strong>Selected Format:</strong>{' '}
+                {deliveryPreference === 'in-person'
+                  ? 'In-Person Clinic Consultation (Unit 204, 178 John St, Brampton)'
+                  : deliveryPreference === 'virtual'
+                  ? 'Virtual Telehealth (secure video link sent to your email)'
+                  : 'Flexible (In-Person or Virtual Telehealth)'}
+              </div>
             </div>
 
             {/* Zero-Guesswork Guarantee Box */}
@@ -693,7 +722,7 @@ export const BookPage: React.FC<BookPageProps> = ({
             <div className="flex items-center justify-between pt-4 border-t border-slate-100">
               <button
                 type="button"
-                onClick={() => setCurrentStep(2)}
+                onClick={() => goToStep(2)}
                 className="px-5 py-2.5 rounded-full text-xs font-bold text-slate-600 hover:bg-slate-100 cursor-pointer flex items-center gap-1.5"
               >
                 <ChevronLeft className="w-4 h-4" />
