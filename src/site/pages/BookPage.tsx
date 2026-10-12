@@ -45,17 +45,27 @@ export const BookPage: React.FC<BookPageProps> = ({
 
   // Specific concerns
   const [selectedConcerns, setSelectedConcerns] = useState<string[]>(initialConcern ? [initialConcern] : []);
+
+  const scrollToWizard = React.useCallback(() => {
+    document.getElementById("booking-wizard")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
+
+  const goToStep = React.useCallback((step: number) => {
+    setCurrentStep(step);
+    scrollToWizard();
+  }, [scrollToWizard]);
+
   React.useEffect(() => {
     if (!initialConcern) return;
-    const t = setTimeout(() => document.getElementById("booking-form")?.scrollIntoView({ behavior: "smooth", block: "start" }), 400);
+    const t = setTimeout(scrollToWizard, 400);
     return () => clearTimeout(t);
-  }, [initialConcern]);
+  }, [initialConcern, scrollToWizard]);
   const [concernDetails, setConcernDetails] = useState<string>('');
 
   // Step 2: Scheduling & Delivery Preferences
   const [preferredDays, setPreferredDays] = useState<string[]>(['Monday', 'Wednesday']);
   const [preferredTimeWindows, setPreferredTimeWindows] = useState<string[]>(['Morning (8:30 AM to 12:00 PM)']);
-  const [deliveryPreference, setDeliveryPreference] = useState<'in-person' | 'virtual' | 'flexible'>('flexible');
+  const [deliveryPreference, setDeliveryPreference] = useState<'in-person' | 'virtual' | 'flexible'>('in-person');
 
   // Step 3: Contact Details
   const [patientName, setPatientName] = useState<string>('');
