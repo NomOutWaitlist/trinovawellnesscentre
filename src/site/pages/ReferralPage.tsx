@@ -36,7 +36,7 @@ export const ReferralPage: React.FC = () => {
       return;
     }
 
-    const saved = saveReferral({
+    saveReferral({
       referrerName,
       referrerEmail,
       referrerPhone,
@@ -47,7 +47,6 @@ export const ReferralPage: React.FC = () => {
       personalNote
     });
 
-    setReferralList(getReferrals());
     setSubmittedSuccess(true);
     // Reset form
     setRefereeName('');
