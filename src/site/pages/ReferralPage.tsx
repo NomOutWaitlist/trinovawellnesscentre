@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { REFERRAL_PROGRAM, CLINIC_INFO } from '../data/clinicData';
-import { getReferrals, saveReferral } from '../utils/storage';
-import { ReferralSubmission } from '../types/clinic';
+import { saveReferral } from '../utils/storage';
 import { 
   Gift, 
   Award, 
@@ -30,9 +29,6 @@ export const ReferralPage: React.FC = () => {
 
   // Points Calculator State
   const [calcReferralCount, setCalcReferralCount] = useState<number>(5);
-
-  // Active Referrals List
-  const [referralList, setReferralList] = useState<ReferralSubmission[]>(getReferrals());
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
