@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { REFERRAL_PROGRAM, CLINIC_INFO } from '../data/clinicData';
-import { getReferrals, saveReferral } from '../utils/storage';
-import { ReferralSubmission } from '../types/clinic';
+import { saveReferral } from '../utils/storage';
 import { 
   Gift, 
   Award, 
@@ -31,16 +30,13 @@ export const ReferralPage: React.FC = () => {
   // Points Calculator State
   const [calcReferralCount, setCalcReferralCount] = useState<number>(5);
 
-  // Active Referrals List
-  const [referralList, setReferralList] = useState<ReferralSubmission[]>(getReferrals());
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!referrerName || !referrerEmail || !refereeName || !refereePhone) {
       return;
     }
 
-    const saved = saveReferral({
+    saveReferral({
       referrerName,
       referrerEmail,
       referrerPhone,
@@ -51,7 +47,6 @@ export const ReferralPage: React.FC = () => {
       personalNote
     });
 
-    setReferralList(getReferrals());
     setSubmittedSuccess(true);
     // Reset form
     setRefereeName('');
@@ -116,7 +111,7 @@ export const ReferralPage: React.FC = () => {
               Loved One Begins Care
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              When your referee attends their first consultation and initiates clinical treatment, <strong>100 points</strong> are automatically credited to your account.
+              When your referee attends their first in-clinic consultation, <strong>100 points</strong> are credited to your account. Points are never awarded for a booking alone — only for an attended visit.
             </p>
           </div>
 
@@ -183,7 +178,7 @@ export const ReferralPage: React.FC = () => {
               <div className="pt-6 border-t border-slate-100 mt-6">
                 <div className="text-xs text-slate-500 flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-[#00A651]" />
-                  <span>Requires {tier.points / 100} completed patient care starts</span>
+                  <span>Requires {tier.points / 100} attended first consultations</span>
                 </div>
               </div>
             </div>
@@ -258,7 +253,7 @@ export const ReferralPage: React.FC = () => {
               Submit a Patient Referral
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
-              Our front-desk team will reach out warmly to offer them a complimentary consultation and attribute 100 reward points to your profile once care begins.
+              Our front-desk team will reach out warmly to offer them a complimentary consultation. Your 100 reward points are credited only after they attend their first in-clinic visit.
             </p>
           </div>
 
@@ -394,65 +389,6 @@ export const ReferralPage: React.FC = () => {
               <span>Submit Referral & Gift Complimentary Consultation</span>
             </button>
           </form>
-        </div>
-      </section>
-
-      {/* Community Referral Status Tracker */}
-      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="bg-slate-50 rounded-3xl p-6 sm:p-8 border border-slate-200">
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <h3 className="font-heading font-extrabold text-lg text-[#0033A0]">
-                Recent Referral Activity
-              </h3>
-              <p className="text-xs text-slate-500">
-                Track status and point credit confirmations for referred individuals.
-              </p>
-            </div>
-            <span className="text-xs font-bold text-[#006837] bg-[#E8F8F0] px-3 py-1 rounded-full">
-              {referralList.length} Active Records
-            </span>
-          </div>
-
-          <div className="space-y-3">
-            {referralList.map((ref) => (
-              <div
-                key={ref.id}
-                className="bg-white rounded-xl p-4 border border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs"
-              >
-                <div>
-                  <div className="font-bold text-slate-800 text-sm">
-                    {ref.refereeName}
-                  </div>
-                  <div className="text-slate-500">
-                    Referred by <strong>{ref.referrerName}</strong> for {ref.serviceInterest}
-                  </div>
-                  {ref.personalNote && (
-                    <div className="text-slate-400 italic text-[11px] mt-1">
-                      &ldquo;{ref.personalNote}&rdquo;
-                    </div>
-                  )}
-                </div>
-
-                <div className="flex items-center gap-3 shrink-0">
-                  <span
-                    className={`font-semibold px-2.5 py-1 rounded-full text-[11px] ${
-                      ref.status === 'Care Started'
-                        ? 'bg-emerald-100 text-[#006837]'
-                        : ref.status === 'Consultation Attended'
-                        ? 'bg-blue-100 text-[#0033A0]'
-                        : 'bg-amber-100 text-amber-800'
-                    }`}
-                  >
-                    {ref.status === 'Invited' ? 'Awaiting attended visit' : ref.status}
-                  </span>
-                  <div className="font-heading font-bold text-[#00A651] text-xs">
-                    {ref.status === 'Points Awarded' ? '+100 Pts paid' : ref.status === 'Invited' ? 'Pending' : '+100 Pts approved'}
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
         </div>
       </section>
     </div>

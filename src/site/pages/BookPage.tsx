@@ -45,17 +45,27 @@ export const BookPage: React.FC<BookPageProps> = ({
 
   // Specific concerns
   const [selectedConcerns, setSelectedConcerns] = useState<string[]>(initialConcern ? [initialConcern] : []);
+
+  const scrollToWizard = React.useCallback(() => {
+    document.getElementById("booking-wizard")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }, []);
+
+  const goToStep = React.useCallback((step: number) => {
+    setCurrentStep(step);
+    scrollToWizard();
+  }, [scrollToWizard]);
+
   React.useEffect(() => {
     if (!initialConcern) return;
-    const t = setTimeout(() => document.getElementById("booking-form")?.scrollIntoView({ behavior: "smooth", block: "start" }), 400);
+    const t = setTimeout(scrollToWizard, 400);
     return () => clearTimeout(t);
-  }, [initialConcern]);
+  }, [initialConcern, scrollToWizard]);
   const [concernDetails, setConcernDetails] = useState<string>('');
 
   // Step 2: Scheduling & Delivery Preferences
   const [preferredDays, setPreferredDays] = useState<string[]>(['Monday', 'Wednesday']);
   const [preferredTimeWindows, setPreferredTimeWindows] = useState<string[]>(['Morning (8:30 AM to 12:00 PM)']);
-  const [deliveryPreference, setDeliveryPreference] = useState<'in-person' | 'virtual' | 'flexible'>('flexible');
+  const [deliveryPreference, setDeliveryPreference] = useState<'in-person' | 'virtual' | 'flexible'>('in-person');
 
   // Step 3: Contact Details
   const [patientName, setPatientName] = useState<string>('');
@@ -64,6 +74,7 @@ export const BookPage: React.FC<BookPageProps> = ({
   const [priorCareNotes, setPriorCareNotes] = useState<string>(
     initialPractitioner ? `Preferred Doctor: ${initialPractitioner}` : ''
   );
+  const [referredBy, setReferredBy] = useState<string>('');
 
   // Completion State
   const [submissionResult, setSubmissionResult] = useState<TriageBookingSubmission | null>(null);
@@ -170,7 +181,10 @@ export const BookPage: React.FC<BookPageProps> = ({
       patientName: patientName.trim(),
       patientPhone: patientPhone.trim(),
       patientEmail: patientEmail.trim(),
-      priorCareNotes: priorCareNotes.trim(),
+      priorCareNotes: [
+        priorCareNotes.trim(),
+        referredBy.trim() ? `Referred by: ${referredBy.trim()}` : ''
+      ].filter(Boolean).join(' | '),
       urgency: 'Priority'
     });
 
@@ -287,7 +301,7 @@ export const BookPage: React.FC<BookPageProps> = ({
       </div>
 
       {/* 3 Clean Step Indicators */}
-      <div className="flex items-center justify-center gap-3 sm:gap-6 mb-10">
+      <div id="booking-wizard" className="scroll-mt-28 flex items-center justify-center gap-3 sm:gap-6 mb-10">
         {[
           { num: 1, label: '1. What You Need' },
           { num: 2, label: '2. Your Schedule' },
@@ -295,7 +309,7 @@ export const BookPage: React.FC<BookPageProps> = ({
         ].map(step => (
           <button
             key={step.num}
-            onClick={() => setCurrentStep(step.num)}
+            onClick={() => goToStep(step.num)}
             className={`px-4 py-2 rounded-full text-xs font-bold transition flex items-center gap-2 cursor-pointer ${
               currentStep === step.num
                 ? 'bg-[#0033A0] text-white shadow-sm'
@@ -381,7 +395,7 @@ export const BookPage: React.FC<BookPageProps> = ({
                 Any specific symptoms? (Optional)
               </label>
               <div className="flex flex-wrap gap-2">
-                {quickSymptoms.map(symp => {
+                {[...quickSymptoms, ...selectedConcerns.filter(c => !quickSymptoms.includes(c))].map(symp => {
                   const isChecked = selectedConcerns.includes(symp);
                   return (
                     <button
@@ -419,7 +433,7 @@ export const BookPage: React.FC<BookPageProps> = ({
             <div className="flex justify-end pt-4">
               <button
                 type="button"
-                onClick={() => setCurrentStep(2)}
+                onClick={() => goToStep(2)}
                 className="btn-pill-leaf text-sm px-8 py-3.5 cursor-pointer shadow-md flex items-center gap-2"
               >
                 <span>Continue to Step 2</span>
@@ -580,7 +594,7 @@ export const BookPage: React.FC<BookPageProps> = ({
             <div className="flex items-center justify-between pt-4 border-t border-slate-100">
               <button
                 type="button"
-                onClick={() => setCurrentStep(1)}
+                onClick={() => goToStep(1)}
                 className="px-5 py-2.5 rounded-full text-xs font-bold text-slate-600 hover:bg-slate-100 cursor-pointer flex items-center gap-1.5"
               >
                 <ChevronLeft className="w-4 h-4" />
@@ -588,7 +602,7 @@ export const BookPage: React.FC<BookPageProps> = ({
               </button>
               <button
                 type="button"
-                onClick={() => setCurrentStep(3)}
+                onClick={() => goToStep(3)}
                 className="btn-pill-leaf text-sm px-8 py-3.5 cursor-pointer shadow-md flex items-center gap-2"
               >
                 <span>Continue to Details</span>
@@ -665,6 +679,35 @@ export const BookPage: React.FC<BookPageProps> = ({
                   className="w-full text-sm p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0033A0]/30"
                 />
               </div>
+
+              <div className="space-y-1.5 sm:col-span-2">
+                <label className="text-xs font-bold text-slate-700 block">
+                  Were you referred by a friend or practitioner? (Optional)
+                </label>
+                <input
+                  type="text"
+                  value={referredBy}
+                  onChange={e => setReferredBy(e.target.value)}
+                  placeholder="e.g. Their full name or referral code, so we can credit their reward"
+                  className="w-full text-sm p-3.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-[#0033A0]/30"
+                />
+                <p className="text-[11px] text-slate-500">
+                  Referral rewards are credited to them only after you attend your first in-clinic consultation.
+                </p>
+              </div>
+            </div>
+
+            {/* Selected Format Confirmation */}
+            <div className="p-3.5 rounded-2xl bg-blue-50/70 border border-[#0033A0]/20 text-xs text-slate-700 flex items-center gap-2.5">
+              <MapPin className="w-4 h-4 text-[#0033A0] shrink-0" />
+              <div>
+                <strong>Selected Format:</strong>{' '}
+                {deliveryPreference === 'in-person'
+                  ? 'In-Person Clinic Consultation (Unit 204, 178 John St, Brampton)'
+                  : deliveryPreference === 'virtual'
+                  ? 'Virtual Telehealth (secure video link sent to your email)'
+                  : 'Flexible (In-Person or Virtual Telehealth)'}
+              </div>
             </div>
 
             {/* Zero-Guesswork Guarantee Box */}
@@ -679,7 +722,7 @@ export const BookPage: React.FC<BookPageProps> = ({
             <div className="flex items-center justify-between pt-4 border-t border-slate-100">
               <button
                 type="button"
-                onClick={() => setCurrentStep(2)}
+                onClick={() => goToStep(2)}
                 className="px-5 py-2.5 rounded-full text-xs font-bold text-slate-600 hover:bg-slate-100 cursor-pointer flex items-center gap-1.5"
               >
                 <ChevronLeft className="w-4 h-4" />
