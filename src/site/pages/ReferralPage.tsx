@@ -111,7 +111,7 @@ export const ReferralPage: React.FC = () => {
               Loved One Begins Care
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              When your referee attends their first consultation and initiates clinical treatment, <strong>100 points</strong> are automatically credited to your account.
+              When your referee attends their first in-clinic consultation, <strong>100 points</strong> are credited to your account. Points are never awarded for a booking alone — only for an attended visit.
             </p>
           </div>
 
@@ -178,7 +178,7 @@ export const ReferralPage: React.FC = () => {
               <div className="pt-6 border-t border-slate-100 mt-6">
                 <div className="text-xs text-slate-500 flex items-center gap-1.5">
                   <CheckCircle2 className="w-4 h-4 text-[#00A651]" />
-                  <span>Requires {tier.points / 100} completed patient care starts</span>
+                  <span>Requires {tier.points / 100} attended first consultations</span>
                 </div>
               </div>
             </div>
