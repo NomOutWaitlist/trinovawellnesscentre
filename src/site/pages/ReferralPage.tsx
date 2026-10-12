@@ -253,7 +253,7 @@ export const ReferralPage: React.FC = () => {
               Submit a Patient Referral
             </h2>
             <p className="text-xs sm:text-sm text-slate-600">
-              Our front-desk team will reach out warmly to offer them a complimentary consultation and attribute 100 reward points to your profile once care begins.
+              Our front-desk team will reach out warmly to offer them a complimentary consultation. Your 100 reward points are credited only after they attend their first in-clinic visit.
             </p>
           </div>
 
