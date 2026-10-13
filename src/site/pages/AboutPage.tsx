@@ -38,6 +38,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigateToBook }) => {
       <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white rounded-3xl border border-slate-200/80 p-8 sm:p-12 shadow-sm flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
           <div className="space-y-4 max-w-xl">
+            {founder.imageUrl && (
+              <img
+                src={founder.imageUrl}
+                alt={founder.name}
+                className="w-24 h-24 rounded-full object-cover object-top border border-slate-200"
+              />
+            )}
             <div className="inline-flex items-center gap-1.5 bg-[#00A651]/10 text-[#006837] text-xs font-bold uppercase tracking-wider px-3 py-1 rounded-full">
               <Award className="w-3.5 h-3.5 text-[#00A651]" />
               Founder & Clinical Director
