@@ -26,15 +26,15 @@ export const MissionPledge: React.FC = () => {
 
   return (
     <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="border-l-4 border-[#00A651] bg-white border border-slate-200/80 border-l-4 px-6 py-8 sm:px-10 sm:py-10 text-center">
+      <div className="bg-white border border-slate-200/80 border-l-4 border-l-[#00A651] px-6 py-8 sm:px-10 sm:py-10 text-center">
         <h2
-          className="font-heading font-extrabold text-trinova-blue leading-tight tracking-tight text-3xl sm:text-5xl"
+          className="font-heading font-extrabold text-trinova-blue leading-tight tracking-tight text-3xl sm:text-5xl flex flex-wrap items-baseline justify-center gap-x-4 sm:gap-x-7"
           aria-label="Vitality. Balance. Harmony."
         >
           {WORDS.map((word, i) => (
             <motion.span
               key={word}
-              className="inline-block whitespace-nowrap"
+              className="whitespace-nowrap"
               initial={reduce ? false : { opacity: 0, y: 18, filter: 'blur(6px)' }}
               animate={
                 show
@@ -43,7 +43,7 @@ export const MissionPledge: React.FC = () => {
               }
               transition={{ duration: 0.5, delay: i * 0.18, ease: [0.16, 1, 0.3, 1] }}
             >
-              <span className={i === 1 ? 'text-[#006837]' : undefined}>{word}</span>{' '}
+              <span className={i === 1 ? 'text-[#006837]' : undefined}>{word}</span>
             </motion.span>
           ))}
         </h2>
