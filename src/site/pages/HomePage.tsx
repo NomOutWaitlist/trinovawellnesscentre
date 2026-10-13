@@ -435,7 +435,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         <div className="bg-slate-50 rounded-3xl border border-slate-200/80 p-8 sm:p-12 mb-10 flex flex-col md:flex-row items-center gap-8">
           <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden shadow-md shrink-0 border-2 border-white">
             <img
-              src="/images/dr_jennifer_anthony_1791561981144.jpg"
+              src="/images/team/jennifer.png"
               alt="Dr. Jennifer Anthony, Founder & Clinical Director"
               className="w-full h-full object-cover"
             />
