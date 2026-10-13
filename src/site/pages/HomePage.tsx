@@ -518,10 +518,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               Complete 12-Week Program
             </div>
             <div className="font-heading font-extrabold text-4xl text-[#0033A0]">
-              $3,300
+              Personalized Plan
             </div>
             <div className="text-[11px] text-slate-500 font-semibold">
-              Tax inclusive · Includes all appointments & body scans
+              Includes consultations, coaching & body scans
             </div>
             <button
               onClick={() => onNavigate('/programs/balance')}

@@ -21,7 +21,7 @@ export const BalanceProgramPage: React.FC<BalanceProgramPageProps> = ({ onNaviga
       a: 'True digestive healing takes time: 30 days to calm inflammation, 30 days to rebuild healthy gut flora, and 30 days to test and reintroduce your favorite foods safely.'
     },
     {
-      q: 'What is included in the $3,300 fee?',
+      q: 'What is included in the program?',
       a: 'Everything. Your 75-minute consultation with Dr. Jennifer Anthony, before-and-after full body scans, 6 private coaching sessions with Michelle Ching, and complete personal meal roadmaps.'
     },
     {
@@ -49,10 +49,10 @@ export const BalanceProgramPage: React.FC<BalanceProgramPageProps> = ({ onNaviga
           {/* Clean Price Pill */}
           <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-white/10 backdrop-blur-md px-8 py-4 rounded-3xl border border-white/20 mb-8">
             <span className="font-heading text-4xl font-extrabold text-white">
-              $3,300
+              Personalized Plan
             </span>
             <span className="text-xs text-blue-200 text-center sm:text-left">
-              Tax inclusive · Complete 12-week intensive clinical care
+              Complete 12-week clinical care · Pricing discussed at your consultation
             </span>
           </div>
 
@@ -129,7 +129,7 @@ export const BalanceProgramPage: React.FC<BalanceProgramPageProps> = ({ onNaviga
               Everything Included in the Program
             </h3>
             <p className="text-xs sm:text-sm text-slate-500 mt-1">
-              $3,300 total fee covers your entire 12-week clinical team care.
+              Your program covers your entire 12-week clinical team care.
             </p>
           </div>
 
@@ -203,6 +203,17 @@ export const BalanceProgramPage: React.FC<BalanceProgramPageProps> = ({ onNaviga
               </div>
             );
           })}
+        </div>
+      </section>
+      {/* Inquiry CTA */}
+      <section className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="bg-[#0033A0] text-white rounded-3xl p-8 sm:p-12 text-center space-y-4">
+          <h3 className="font-heading text-2xl sm:text-3xl font-extrabold">Want to know more about the program?</h3>
+          <p className="text-sm text-blue-100 max-w-lg mx-auto">Book a free conversation with our team. We will explain each phase, answer your questions and share pricing for your personal plan.</p>
+          <div className="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+            <button onClick={() => onNavigateToBook('12-Week Gut Reset')} className="btn-pill-leaf text-sm px-8 py-3.5 cursor-pointer">Book a Consultation</button>
+            <a href="tel:+19054957748" className="inline-flex items-center justify-center rounded-md border border-white/40 px-8 py-3.5 text-sm font-bold hover:bg-white/10">Call (905) 495-7748</a>
+          </div>
         </div>
       </section>
     </div>
