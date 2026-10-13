@@ -112,6 +112,14 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigateToBook }) => {
               className="bg-white rounded-3xl border border-slate-200/80 p-6 sm:p-7 shadow-xs flex flex-col justify-between hover:border-slate-300 transition"
             >
               <div>
+                {practitioner.imageUrl && (
+                  <img
+                    src={practitioner.imageUrl}
+                    alt={practitioner.name}
+                    loading="lazy"
+                    className="w-20 h-20 rounded-full object-cover object-top mb-4 border border-slate-200"
+                  />
+                )}
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-[#006837] bg-[#E8F8F0] px-2.5 py-0.5 rounded-full">
                     {practitioner.department}
