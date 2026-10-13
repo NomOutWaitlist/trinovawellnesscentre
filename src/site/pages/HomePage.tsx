@@ -134,40 +134,23 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
             </a>
           </div>
 
-          {/* Clinic Interior Showcase with Stats Bar */}
-          <div className="overflow-hidden border border-border rounded-md">
-            <img
-              src="/images/trinova_clinic_interior_1791561947732.jpg"
-              alt="Trinova Wellness Centre clinic interior in Brampton"
-              className="w-full h-[240px] sm:h-[380px] object-cover object-center"
-            />
-            
-            {/* Floating Glass Bar */}
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-4 px-5 py-4 bg-background border-t border-border text-foreground">
-              <div className="flex items-center gap-6 text-xs font-bold text-slate-700 flex-wrap justify-center sm:justify-start">
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#00A651]" />
-                  <span>8 Licensed Specialists</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#0033A0]" />
-                  <span>In-Person & Virtual Telehealth</span>
-                </div>
-                <div className="flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-[#006837]" />
-                  <span>Direct Insurance Billing</span>
-                </div>
-              </div>
-
-              <div className="text-xs font-semibold text-slate-600 hidden md:block">
-                Unit 204, 178 John St, Brampton · Free Visitor Parking
-              </div>
+          {/* Trust badges */}
+          <div className="flex items-center justify-center gap-x-6 gap-y-3 text-xs font-bold text-slate-700 flex-wrap">
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#00A651]" />
+              <span>8 Licensed Specialists</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#0033A0]" />
+              <span>In-Person & Virtual Telehealth</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span className="w-2.5 h-2.5 rounded-full bg-[#006837]" />
+              <span>Direct Insurance Billing</span>
             </div>
           </div>
         </div>
       </section>
-
-      <MissionPledge />
 
       {/* Youth Focus banner */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
