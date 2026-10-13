@@ -46,7 +46,8 @@ export const PRACTITIONERS: Practitioner[] = [
       'Emotion-Focused Therapy',
       'Solution-Focused Counseling'
     ],
-    isDirector: true
+    isDirector: true,
+    imageUrl: '/images/team/jennifer.png'
   },
   {
     id: 'dr-paulette-higgins-moncrieffe',
@@ -67,7 +68,8 @@ export const PRACTITIONERS: Practitioner[] = [
       'Spinal decompression table',
       'Active exercise rehab',
       'Muscle & joint release'
-    ]
+    ],
+    imageUrl: '/images/team/paulette.jpg'
   },
   {
     id: 'stacy-yong',
@@ -89,7 +91,8 @@ export const PRACTITIONERS: Practitioner[] = [
       'Trauma Processing (CPT)',
       'Emotion Coping Skills (DBT)',
       'Stress reduction techniques'
-    ]
+    ],
+    imageUrl: '/images/team/stacy.jpg'
   },
   {
     id: 'dr-bita Sharifzadeh',
@@ -108,7 +111,8 @@ export const PRACTITIONERS: Practitioner[] = [
       'Comprehensive psychological testing',
       'Clinical team oversight',
       'Evidence-based treatment plans'
-    ]
+    ],
+    imageUrl: '/images/team/bita.jpg'
   },
   {
     id: 'shanna-kay-stephens',
@@ -130,7 +134,8 @@ export const PRACTITIONERS: Practitioner[] = [
       'Family therapy',
       'Culturally grounded mindfulness',
       'Empathy-building dialog'
-    ]
+    ],
+    imageUrl: '/images/team/shanna-kay.jpg'
   },
   {
     id: 'vishma-lamichhane',
@@ -151,7 +156,8 @@ export const PRACTITIONERS: Practitioner[] = [
       'Abdominal & stomach alignment',
       'Joint & ligament balancing',
       'Myofascial tension release'
-    ]
+    ],
+    imageUrl: '/images/team/vishma.jpg'
   },
   {
     id: 'seyi-oladipo',
@@ -172,7 +178,8 @@ export const PRACTITIONERS: Practitioner[] = [
       'Trigger point knot release',
       'Targeted muscle stretching',
       'Circulation therapy'
-    ]
+    ],
+    imageUrl: '/images/team/seyi.jpg'
   },
   {
     id: 'michelle-ching',
@@ -297,7 +304,7 @@ export const DIAGNOSTIC_TECHNOLOGIES: DiagnosticTech[] = [
 export const THE_BALANCE_PROGRAM = {
   name: 'The Balance Program',
   subtitle: '12-Week Gut Reset & Energy Protocol',
-  price: '$3,300',
+  price: 'Personalized Care Plan',
   priceDetail: 'Tax inclusive · Complete 12-week doctor-guided program',
   overview: 'The Balance Program is Trinova’s 12-week program designed to stop stomach bloating, heal your gut lining, and restore daily energy. Because 80% of your body’s mood and immune chemicals are made in your gut, fixing your digestion clears brain fog and fatigue.',
   inclusions: [
@@ -517,7 +524,7 @@ export const CLINIC_SERVICES: ServiceItem[] = [
     deliveryFormat: 'In-Person & Virtual Telehealth',
     deliveryDetails: 'Available in-person at our Brampton clinic or virtually from anywhere with digital meal plans, gut symptom tracking, and direct telehealth video sessions.',
     treatments: [
-      'The Balance Program: 12-Week Complete Gut Reset ($3,300)',
+      'The Balance Program: 12-Week Complete Gut Reset',
       'Finding hidden food sensitivities that cause bloating',
       'Repairing the stomach lining (leaky gut support)',
       'Restoring healthy, beneficial gut bacteria',

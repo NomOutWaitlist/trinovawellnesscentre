@@ -210,7 +210,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
       ],
       moreOnIt: {
         howItWorks: 'Phase 1 (Weeks 1 to 4) removes inflammatory triggers and calms your stomach. Phase 2 (Weeks 5 to 8) rebuilds healthy gut bacteria and mucosal barrier. Phase 3 (Weeks 9 to 12) safely reintroduces favorite foods with before-and-after body scans.',
-        sessionDetails: '12 weeks of weekly 1-on-1 nutritional guidance, meal plans, and diagnostic check-ins. Total investment is $3,300 tax-inclusive. Coaching sessions can be attended in-person or virtually from anywhere.',
+        sessionDetails: '12 weeks of weekly 1-on-1 nutritional guidance, meal plans, and diagnostic check-ins. Coaching sessions can be attended in-person or virtually from anywhere.',
         coverage: 'Parts of the program may be claimed through nutritional counseling and psychotherapy benefits.'
       },
       bookCategory: '12-Week Gut Reset'
@@ -566,7 +566,7 @@ export const ServicesPage: React.FC<ServicesPageProps> = ({
 
                     {service.id === 'gut-balance' && (
                       <span className="text-xs font-bold text-[#0033A0] bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-100">
-                        12-Week Protocol · $3,300
+                        12-Week Personalized Protocol
                       </span>
                     )}
                   </div>

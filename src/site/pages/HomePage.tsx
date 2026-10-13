@@ -69,7 +69,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     'Bloating & Gut Trouble': {
       title: '12-Week Gut Reset & Food Trigger Discovery',
       specialist: 'Michelle Ching (Holistic Nutritionist) & Dr. Anthony',
-      description: 'Stop daily abdominal bloating, pinpoint what foods upset your system, and rebuild your digestive lining with step-by-step coaching ($3,300).',
+      description: 'Stop daily abdominal bloating, pinpoint what foods upset your system, and rebuild your digestive lining with step-by-step coaching.',
       deliverables: ['Identify hidden trigger foods that cause discomfort', 'Sooth stomach inflammation and gas', 'Pre- and post-reset full body scans'],
       categoryToBook: '12-Week Gut Reset'
     },
@@ -355,7 +355,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 12-Week Gut Reset
               </h3>
               <p className="text-xs text-slate-500 leading-relaxed font-normal">
-                Stop stomach bloating, discover trigger foods, and rebuild gut health with private coaching ($3,300).
+                Stop stomach bloating, discover trigger foods, and rebuild gut health with private coaching.
               </p>
             </div>
             <div className="text-xs font-bold text-[#006837] mt-6 flex items-center gap-1">
@@ -518,10 +518,10 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               Complete 12-Week Program
             </div>
             <div className="font-heading font-extrabold text-4xl text-[#0033A0]">
-              $3,300
+              Personalized Plan
             </div>
             <div className="text-[11px] text-slate-500 font-semibold">
-              Tax inclusive · Includes all appointments & body scans
+              Includes consultations, coaching & body scans
             </div>
             <button
               onClick={() => onNavigate('/programs/balance')}

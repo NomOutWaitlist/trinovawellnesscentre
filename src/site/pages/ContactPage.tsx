@@ -327,7 +327,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateToBook }) =>
                 >
                   <option value="General Clinical Inquiry">General Clinical Inquiry</option>
                   <option value="BrainCore Neurofeedback Question">BrainCore Neurofeedback Question</option>
-                  <option value="The Balance Program ($3,300 Gut Reset)">The Balance Program ($3,300 Gut Reset)</option>
+                  <option value="The Balance Program (Gut & Metabolic Reset)">The Balance Program (Gut & Metabolic Reset)</option>
                   <option value="Post-MVA / WSIB Claim Processing">Post-MVA / WSIB Claim Processing</option>
                   <option value="Insurance Direct Billing Inquiry">Insurance Direct Billing Inquiry</option>
                   <option value="Practitioner Specific Question">Question for Dr. Jennifer Anthony / Team</option>

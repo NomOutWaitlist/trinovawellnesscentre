@@ -43,7 +43,7 @@ const INITIAL_BOOKINGS: TriageBookingSubmission[] = [
     timestamp: '2026-10-08T16:45:00Z',
     category: 'The Balance Program (Gut Reset)',
     concerns: ['Gut & Digestive Issues', 'Chronic Fatigue', 'Inflammation'],
-    concernDetails: 'Severe abdominal bloating and systemic exhaustion. Ready to start the 12-week $3,300 Balance Program under Dr. Jennifer Anthony and Michelle Ching.',
+    concernDetails: 'Severe abdominal bloating and systemic exhaustion. Ready to start the 12-week Balance Program under Dr. Jennifer Anthony and Michelle Ching.',
     preferredDays: ['Saturday', 'Monday'],
     preferredTimeWindows: ['Morning (9am - 12pm)'],
     patientName: 'Robert Vance',

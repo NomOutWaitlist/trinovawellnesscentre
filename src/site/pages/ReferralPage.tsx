@@ -364,7 +364,7 @@ export const ReferralPage: React.FC = () => {
                   <option value="BrainCore Neurofeedback Therapy">BrainCore Neurofeedback (ADHD / Anxiety / Concussion)</option>
                   <option value="Psychotherapy & EMDR">Psychotherapy & EMDR (Trauma / Mood)</option>
                   <option value="Pain Rehab & Chiropractic">Chiropractic, Osteopathy & RMT</option>
-                  <option value="The Balance Program (Gut Reset)">The Balance Program ($3,300 Gut Reset)</option>
+                  <option value="The Balance Program (Gut Reset)">The Balance Program (Gut Reset)</option>
                   <option value="Post-MVA Accident Recovery">Post-MVA Car Accident Care</option>
                 </select>
               </div>

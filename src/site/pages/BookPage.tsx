@@ -112,7 +112,7 @@ export const BookPage: React.FC<BookPageProps> = ({
     {
       id: '12-Week Gut Reset',
       title: '12-Week Gut Reset',
-      subtitle: 'Stop stomach bloating, identify food sensitivities, and reboot digestion ($3,300).',
+      subtitle: 'Stop stomach bloating, identify food sensitivities, and reboot digestion.',
       tag: 'Nutrition',
       icon: <Salad className="w-5 h-5 text-[#00A651]" />
     }

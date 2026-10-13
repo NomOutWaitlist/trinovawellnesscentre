@@ -97,7 +97,7 @@ export const AreasServedPage: React.FC<AreasServedPageProps> = ({
         { name: 'Kleinburg', time: '20 to 25 mins', note: 'South along Highway 27 to Highway 7 West' }
       ],
       highlights: [
-        'Specialized 14-Day Balance gut reset and body composition scans',
+        'Specialized 12-week Balance gut reset and body composition scans',
         'Integrated sports injury chiropractic and registered massage therapy',
         'Evening and Saturday appointments available'
       ]
@@ -473,7 +473,7 @@ export const AreasServedPage: React.FC<AreasServedPageProps> = ({
 
             <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 hover:shadow-md transition-shadow">
               <h3 className="font-heading font-extrabold text-lg text-[#0033A0] mb-2">
-                The Balance Program (14-Day Gut Reset)
+                The Balance Program (12-Week Gut Reset)
               </h3>
               <p className="text-xs text-slate-600 leading-relaxed mb-4">
                 Structured clinical protocol combining gut rebalancing nutrition, medical-grade supplements, and 3-minute cellular body scans to overcome fatigue, bloating, and food cravings.

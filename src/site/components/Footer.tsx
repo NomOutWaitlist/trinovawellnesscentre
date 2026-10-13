@@ -68,7 +68,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               </li>
               <li>
                 <button onClick={() => handleLink('/programs/balance')} className="text-emerald-300 hover:text-white font-medium cursor-pointer text-left">
-                  The Balance Program (14-Day Gut Reset)
+                  The Balance Program (12-Week Gut Reset)
                 </button>
               </li>
               <li>
