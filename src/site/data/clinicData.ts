@@ -20,8 +20,8 @@ export const CLINIC_INFO = {
     { days: 'Saturday', time: '9:00 AM to 4:00 PM' },
     { days: 'Sunday', time: 'By Special Appointment' }
   ],
-  philosophy: 'True health is whole-person wellness: connecting your body, mind, brain, and gut under one roof. Healing should never happen in isolation.',
-  mission: 'Help you overcome chronic pain, anxiety, and fatigue through caring, coordinated team healthcare.'
+  philosophy: 'Vitality. Balance. Harmony. Mind, body, and spirit treated as one.',
+  mission: 'Vitality. Balance. Harmony.'
 };
 
 export const PRACTITIONERS: Practitioner[] = [

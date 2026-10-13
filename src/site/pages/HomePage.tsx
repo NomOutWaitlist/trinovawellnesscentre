@@ -3,6 +3,7 @@ import { CareJourneyTimeline } from '../components/CareJourneyTimeline';
 import { DiagnosticTechShowcase } from '../components/DiagnosticTechShowcase';
 import { InteractiveHealthMatrix } from '../components/InteractiveHealthMatrix';
 import { BrainwaveVisualizer } from '../components/BrainwaveVisualizer';
+import { MissionPledge } from '../components/MissionPledge';
 import { CLINIC_INFO, PRACTITIONERS, THE_BALANCE_PROGRAM } from '../data/clinicData';
 import { 
   ArrowRight, 
@@ -165,6 +166,8 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
           </div>
         </div>
       </section>
+
+      <MissionPledge />
 
       {/* Youth Focus banner */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
