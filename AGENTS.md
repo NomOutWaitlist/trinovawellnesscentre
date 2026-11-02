@@ -14,3 +14,6 @@
 
 - Render all Trinova logo placements through the shared TrinovaLogo component using public/trinova-logo.webp; site images live in public/ so they deploy with any host (e.g. Vercel).
 - Booking emails go through src/lib/booking-email.functions.ts calling Resend directly with RESEND_API_KEY (optional RESEND_FROM, CLINIC_NOTIFY_EMAIL); keeps email working off-platform.
+- Staff tracking uses unlisted /staff routes without public chrome, server-verified role PINs, encrypted HttpOnly sessions, and a token-protected Google Apps Script; enforce access again in every data function because hiding links is not authorization.
+- The Google script provides durable login throttling and idempotent work writes; reject missing credentials and never fall back to browser-only work storage or unauthenticated sheet reads.
+- Nitro targets Vercel for external deployments; Lovable's managed build overrides the target for its own hosting.

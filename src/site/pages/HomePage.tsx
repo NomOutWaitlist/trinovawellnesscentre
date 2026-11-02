@@ -3,7 +3,6 @@ import { CareJourneyTimeline } from '../components/CareJourneyTimeline';
 import { DiagnosticTechShowcase } from '../components/DiagnosticTechShowcase';
 import { InteractiveHealthMatrix } from '../components/InteractiveHealthMatrix';
 import { BrainwaveVisualizer } from '../components/BrainwaveVisualizer';
-import { MissionPledge } from '../components/MissionPledge';
 import { CLINIC_INFO, PRACTITIONERS, THE_BALANCE_PROGRAM } from '../data/clinicData';
 import { 
   ArrowRight, 

@@ -17,8 +17,12 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as PortalRouteImport } from './routes/portal'
 import { Route as ReferralRouteImport } from './routes/referral'
 import { Route as ServicesRouteImport } from './routes/services'
+import { Route as StaffRouteImport } from './routes/staff'
 import { Route as YouthFocusRouteImport } from './routes/youth-focus'
 import { Route as ProgramsBalanceRouteImport } from './routes/programs.balance'
+import { Route as StaffIndexRouteImport } from './routes/staff.index'
+import { Route as StaffLogRouteImport } from './routes/staff.log'
+import { Route as StaffReportsRouteImport } from './routes/staff.reports'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -60,6 +64,11 @@ const ServicesRoute = ServicesRouteImport.update({
   path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
+const StaffRoute = StaffRouteImport.update({
+  id: '/staff',
+  path: '/staff',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const YouthFocusRoute = YouthFocusRouteImport.update({
   id: '/youth-focus',
   path: '/youth-focus',
@@ -69,6 +78,21 @@ const ProgramsBalanceRoute = ProgramsBalanceRouteImport.update({
   id: '/programs/balance',
   path: '/programs/balance',
   getParentRoute: () => rootRouteImport,
+} as any)
+const StaffIndexRoute = StaffIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => StaffRoute,
+} as any)
+const StaffLogRoute = StaffLogRouteImport.update({
+  id: '/log',
+  path: '/log',
+  getParentRoute: () => StaffRoute,
+} as any)
+const StaffReportsRoute = StaffReportsRouteImport.update({
+  id: '/reports',
+  path: '/reports',
+  getParentRoute: () => StaffRoute,
 } as any)
 
 export interface FileRoutesByFullPath {
@@ -80,8 +104,12 @@ export interface FileRoutesByFullPath {
   '/portal': typeof PortalRoute
   '/referral': typeof ReferralRoute
   '/services': typeof ServicesRoute
+  '/staff': typeof StaffRouteWithChildren
   '/youth-focus': typeof YouthFocusRoute
   '/programs/balance': typeof ProgramsBalanceRoute
+  '/staff/log': typeof StaffLogRoute
+  '/staff/reports': typeof StaffReportsRoute
+  '/staff/': typeof StaffIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -94,6 +122,9 @@ export interface FileRoutesByTo {
   '/services': typeof ServicesRoute
   '/youth-focus': typeof YouthFocusRoute
   '/programs/balance': typeof ProgramsBalanceRoute
+  '/staff/log': typeof StaffLogRoute
+  '/staff/reports': typeof StaffReportsRoute
+  '/staff': typeof StaffIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -105,8 +136,12 @@ export interface FileRoutesById {
   '/portal': typeof PortalRoute
   '/referral': typeof ReferralRoute
   '/services': typeof ServicesRoute
+  '/staff': typeof StaffRouteWithChildren
   '/youth-focus': typeof YouthFocusRoute
   '/programs/balance': typeof ProgramsBalanceRoute
+  '/staff/log': typeof StaffLogRoute
+  '/staff/reports': typeof StaffReportsRoute
+  '/staff/': typeof StaffIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -119,8 +154,12 @@ export interface FileRouteTypes {
     | '/portal'
     | '/referral'
     | '/services'
+    | '/staff'
     | '/youth-focus'
     | '/programs/balance'
+    | '/staff/log'
+    | '/staff/reports'
+    | '/staff/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -133,6 +172,9 @@ export interface FileRouteTypes {
     | '/services'
     | '/youth-focus'
     | '/programs/balance'
+    | '/staff/log'
+    | '/staff/reports'
+    | '/staff'
   id:
     | '__root__'
     | '/'
@@ -143,8 +185,12 @@ export interface FileRouteTypes {
     | '/portal'
     | '/referral'
     | '/services'
+    | '/staff'
     | '/youth-focus'
     | '/programs/balance'
+    | '/staff/log'
+    | '/staff/reports'
+    | '/staff/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -156,6 +202,7 @@ export interface RootRouteChildren {
   PortalRoute: typeof PortalRoute
   ReferralRoute: typeof ReferralRoute
   ServicesRoute: typeof ServicesRoute
+  StaffRoute: typeof StaffRouteWithChildren
   YouthFocusRoute: typeof YouthFocusRoute
   ProgramsBalanceRoute: typeof ProgramsBalanceRoute
 }
@@ -218,6 +265,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/staff': {
+      id: '/staff'
+      path: '/staff'
+      fullPath: '/staff'
+      preLoaderRoute: typeof StaffRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/youth-focus': {
       id: '/youth-focus'
       path: '/youth-focus'
@@ -232,8 +286,43 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgramsBalanceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/staff/': {
+      id: '/staff/'
+      path: '/'
+      fullPath: '/staff/'
+      preLoaderRoute: typeof StaffIndexRouteImport
+      parentRoute: typeof StaffRoute
+    }
+    '/staff/log': {
+      id: '/staff/log'
+      path: '/log'
+      fullPath: '/staff/log'
+      preLoaderRoute: typeof StaffLogRouteImport
+      parentRoute: typeof StaffRoute
+    }
+    '/staff/reports': {
+      id: '/staff/reports'
+      path: '/reports'
+      fullPath: '/staff/reports'
+      preLoaderRoute: typeof StaffReportsRouteImport
+      parentRoute: typeof StaffRoute
+    }
   }
 }
+
+interface StaffRouteChildren {
+  StaffLogRoute: typeof StaffLogRoute
+  StaffReportsRoute: typeof StaffReportsRoute
+  StaffIndexRoute: typeof StaffIndexRoute
+}
+
+const StaffRouteChildren: StaffRouteChildren = {
+  StaffLogRoute: StaffLogRoute,
+  StaffReportsRoute: StaffReportsRoute,
+  StaffIndexRoute: StaffIndexRoute,
+}
+
+const StaffRouteWithChildren = StaffRoute._addFileChildren(StaffRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -244,6 +333,7 @@ const rootRouteChildren: RootRouteChildren = {
   PortalRoute: PortalRoute,
   ReferralRoute: ReferralRoute,
   ServicesRoute: ServicesRoute,
+  StaffRoute: StaffRouteWithChildren,
   YouthFocusRoute: YouthFocusRoute,
   ProgramsBalanceRoute: ProgramsBalanceRoute,
 }
