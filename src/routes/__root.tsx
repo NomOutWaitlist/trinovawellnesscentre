@@ -135,6 +135,9 @@ function RootComponent() {
 function SiteChrome() {
   const go = useSiteNav();
   const pathname = useRouterState({ select: (st) => st.location.pathname });
+  if (pathname === '/staff' || pathname.startsWith('/staff/')) {
+    return <div className="min-h-screen bg-background text-foreground"><Outlet /></div>;
+  }
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 antialiased font-sans">
       <Header currentPath={pathname} onNavigate={(p) => go(p)} />
