@@ -80,7 +80,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigateToBook }) => {
               onClick={() => onNavigateToBook(founder.name)}
               className="btn-pill-leaf text-xs sm:text-sm px-7 py-3.5 w-full md:w-auto shadow-md"
             >
-              <span>Book Consultation with Dr. Anthony</span>
+              <span>Book Consultation with Jennifer Anthony</span>
               <ChevronRight className="w-4 h-4" />
             </button>
           </div>

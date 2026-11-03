@@ -308,7 +308,7 @@ export const THE_BALANCE_PROGRAM = {
   priceDetail: 'Tax inclusive · Complete 12-week doctor-guided program',
   overview: 'The Balance Program is Trinova’s 12-week program designed to stop stomach bloating, heal your gut lining, and restore daily energy. Because 80% of your body’s mood and immune chemicals are made in your gut, fixing your digestion clears brain fog and fatigue.',
   inclusions: [
-    '75-minute consultation with Dr. Jennifer Anthony',
+    '75-minute consultation with Jennifer Anthony',
     'Pre- and post-program ES Teck 3-minute body scans (Week 1 and Week 12)',
     'Customized 12-week nutrition plan by Michelle Ching',
     '6 private one-on-one coaching sessions every two weeks',
@@ -339,7 +339,7 @@ export const THE_BALANCE_PROGRAM = {
       keyActions: [
         'Introduce healthy probiotics and natural nutrients that repair your stomach lining',
         'Learn simple breathing exercises that stimulate your body’s natural digestive nerve',
-        'Midway check-in with Dr. Anthony to celebrate improvements in energy and mood'
+        'Midway check-in with Jennifer Anthony to celebrate improvements in energy and mood'
       ],
       clinicalFocus: 'Healing the gut lining so food absorbs properly without causing bloating.'
     },
@@ -367,7 +367,7 @@ export const CARE_JOURNEY_PHASES = [
     description: 'We listen to your health story and measure what is going on before starting treatment.',
     deliverables: [
       '60-second symptom questionnaire to match you with the right specialist',
-      '75-minute deep-dive consultation with Dr. Jennifer Anthony',
+      '75-minute deep-dive consultation with Jennifer Anthony',
       'Objective Baselines: 3-minute body scan & brainwave mapping',
       'Spinal posture check and nutrition review',
       'A clear, personalized care plan made just for you'
@@ -486,7 +486,7 @@ export const CLINIC_SERVICES: ServiceItem[] = [
       'Relationship tension & communication struggles',
       'Major life changes & grief'
     ],
-    practitioners: ['Dr. Jennifer Anthony', 'Stacy Yong, M.Psy, RP', 'Dr. Bita Sharifzadeh', 'Shanna-Kay Stephens'],
+    practitioners: ['Jennifer Anthony', 'Stacy Yong, M.Psy, RP', 'Dr. Bita Sharifzadeh', 'Shanna-Kay Stephens'],
     icon: 'HeartHandshake'
   },
   {
@@ -512,7 +512,7 @@ export const CLINIC_SERVICES: ServiceItem[] = [
       'Feeling constantly exhausted & burned out',
       'Seeing real proof that your body is getting healthier'
     ],
-    practitioners: ['Dr. Jennifer Anthony', 'Certified Clinic Technicians'],
+    practitioners: ['Jennifer Anthony', 'Certified Clinic Technicians'],
     icon: 'Cpu'
   },
   {
@@ -537,14 +537,14 @@ export const CLINIC_SERVICES: ServiceItem[] = [
       'Brain fog and low mood caused by stomach issues',
       'Recovering gut health after antibiotics'
     ],
-    practitioners: ['Dr. Jennifer Anthony', 'Michelle Ching'],
+    practitioners: ['Jennifer Anthony', 'Michelle Ching'],
     icon: 'Salad'
   }
 ];
 
 export const PATIENT_TESTIMONIALS = [
   {
-    quote: "Trinova changed my life. After my car crash, I was going to five different clinics that never talked to each other. Dr. Jennifer Anthony brought my physical rehab, trauma therapy, and brain training together under one roof. For the first time in years, I sleep without pain.",
+    quote: "Trinova changed my life. After my car crash, I was going to five different clinics that never talked to each other. Jennifer Anthony brought my physical rehab, trauma therapy, and brain training together under one roof. For the first time in years, I sleep without pain.",
     author: "Marcus T.",
     location: "Brampton, ON",
     program: "Car Accident Recovery & BrainCore"

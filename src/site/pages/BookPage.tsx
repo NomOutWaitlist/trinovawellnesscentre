@@ -224,7 +224,7 @@ export const BookPage: React.FC<BookPageProps> = ({
               You’re all set, {submissionResult.patientName.split(' ')[0]}!
             </h1>
             <p className="text-sm sm:text-base text-slate-600 max-w-lg mx-auto font-normal leading-relaxed">
-              Dr. Jennifer Anthony and our Brampton clinic reception will review your request and call you within <strong>24 business hours</strong> to finalize your appointment time.
+              Jennifer Anthony and our Brampton clinic reception will review your request and call you within <strong>24 business hours</strong> to finalize your appointment time.
             </p>
           </div>
 
@@ -288,7 +288,7 @@ export const BookPage: React.FC<BookPageProps> = ({
           Book your appointment.
         </h1>
         <p className="text-base text-slate-600 mt-3 font-normal leading-relaxed">
-          Tell us what you need. Dr. Jennifer Anthony and our team connect you with the right specialist so you don’t waste time on guesswork.
+          Tell us what you need. Jennifer Anthony and our team connect you with the right specialist so you don’t waste time on guesswork.
         </p>
 
         {/* Quick Phone Callout */}
@@ -714,7 +714,7 @@ export const BookPage: React.FC<BookPageProps> = ({
             <div className="p-4 rounded-2xl bg-[#E8F8F0] border border-[#00A651]/20 text-xs text-slate-700 flex items-start gap-3">
               <CheckCircle2 className="w-5 h-5 text-[#00A651] shrink-0 mt-0.5" />
               <div>
-                <strong>Zero Guesswork:</strong> Dr. Jennifer Anthony and our Brampton team review your information before scheduling so you see the exact right specialist on your very first visit.
+                <strong>Zero Guesswork:</strong> Jennifer Anthony and our Brampton team review your information before scheduling so you see the exact right specialist on your very first visit.
               </div>
             </div>
 

@@ -479,7 +479,7 @@ export const AreasServedPage: React.FC<AreasServedPageProps> = ({
                 Structured clinical protocol combining gut rebalancing nutrition, medical-grade supplements, and 3-minute cellular body scans to overcome fatigue, bloating, and food cravings.
               </p>
               <div className="text-[11px] font-semibold text-[#006837]">
-                Guided by Clinical Director Dr. Jennifer Anthony
+                Guided by Clinical Director Jennifer Anthony
               </div>
             </div>
 

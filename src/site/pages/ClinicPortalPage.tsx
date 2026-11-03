@@ -63,7 +63,7 @@ export const ClinicPortalPage: React.FC<ClinicPortalPageProps> = ({ onNavigateTo
             Patient Inquiries & Appointments
           </h1>
           <p className="text-xs sm:text-sm text-slate-600 mt-1">
-            Real-time queue for review by Dr. Jennifer Anthony and reception. Submissions from online booking appear here instantly.
+            Real-time queue for review by Jennifer Anthony and reception. Submissions from online booking appear here instantly.
           </p>
         </div>
 
