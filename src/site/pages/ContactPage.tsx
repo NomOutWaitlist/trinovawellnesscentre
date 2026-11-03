@@ -330,7 +330,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigateToBook }) =>
                   <option value="The Balance Program (Gut & Metabolic Reset)">The Balance Program (Gut & Metabolic Reset)</option>
                   <option value="Post-MVA / WSIB Claim Processing">Post-MVA / WSIB Claim Processing</option>
                   <option value="Insurance Direct Billing Inquiry">Insurance Direct Billing Inquiry</option>
-                  <option value="Practitioner Specific Question">Question for Dr. Jennifer Anthony / Team</option>
+                  <option value="Practitioner Specific Question">Question for Jennifer Anthony / Team</option>
                 </select>
               </div>
 

@@ -11,7 +11,7 @@ export const CareJourneyTimeline: React.FC<CareJourneyTimelineProps> = ({ onNavi
       num: '01',
       title: 'Consultation & Discovery',
       highlight: 'First Visit',
-      desc: 'Meet Dr. Jennifer Anthony for an in-depth conversation and a painless 3-minute full-body scan.'
+      desc: 'Meet Jennifer Anthony for an in-depth conversation and a painless 3-minute full-body scan.'
     },
     {
       num: '02',

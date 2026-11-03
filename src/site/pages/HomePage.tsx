@@ -54,28 +54,28 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     },
     'Anxiety & Stress': {
       title: 'Therapy & Nervous System Calming',
-      specialist: 'Dr. Jennifer Anthony (PhD, RP) & Stacy Yong (19+ yrs exp)',
+      specialist: 'Jennifer Anthony (PhD, RP) & Stacy Yong (19+ yrs exp)',
       description: 'Safe, compassionate talk therapy (CBT, EMDR) paired with calming techniques to break the cycle of racing thoughts and emotional burnout.',
       deliverables: ['Hospital-grade counseling (CAMH veteran therapist)', 'EMDR trauma recovery for painful memories', 'Practical tools to handle daily anxiety'],
       categoryToBook: 'Therapy & Mental Health'
     },
     'ADHD & Brain Fog': {
       title: 'Drug-Free BrainCore Brainwave Training',
-      specialist: 'Dr. Jennifer Anthony & Clinical Tech Team',
+      specialist: 'Jennifer Anthony & Clinical Tech Team',
       description: 'Retrain brainwave frequencies without medication. You sit back and watch a movie while gentle sensors teach your brain how to focus and stay calm.',
       deliverables: ['100% painless and medication-free', 'Proven for children, teens, and adults with ADHD', 'Visible before-and-after improvements on screen'],
       categoryToBook: 'Drug-Free Brain Training'
     },
     'Bloating & Gut Trouble': {
       title: '12-Week Gut Reset & Food Trigger Discovery',
-      specialist: 'Michelle Ching (Holistic Nutritionist) & Dr. Anthony',
+      specialist: 'Michelle Ching (Holistic Nutritionist) & Jennifer Anthony',
       description: 'Stop daily abdominal bloating, pinpoint what foods upset your system, and rebuild your digestive lining with step-by-step coaching.',
       deliverables: ['Identify hidden trigger foods that cause discomfort', 'Sooth stomach inflammation and gas', 'Pre- and post-reset full body scans'],
       categoryToBook: '12-Week Gut Reset'
     },
     'Sleep & Insomnia': {
       title: 'Restorative Sleep & Nervous System Reset',
-      specialist: 'Dr. Jennifer Anthony & Vishma Lamichhane (Osteopathy)',
+      specialist: 'Jennifer Anthony & Vishma Lamichhane (Osteopathy)',
       description: 'Reset nighttime delta brainwave patterns and ease neck and jaw tension so you fall asleep naturally and wake up refreshed.',
       deliverables: ['Re-train overactive racing nighttime brainwaves', 'Gentle osteopathic craniosacral head and neck release', 'Drug-free, long-term sleep restoration'],
       categoryToBook: 'Drug-Free Brain Training'
@@ -415,13 +415,13 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         <DiagnosticTechShowcase onNavigateToBook={() => onNavigate('/book')} />
       </section>
 
-      {/* Founder Spotlight: Dr. Jennifer Anthony */}
+      {/* Founder Spotlight: Jennifer Anthony */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-50 rounded-3xl border border-slate-200/80 p-8 sm:p-12 mb-10 flex flex-col md:flex-row items-center gap-8">
           <div className="w-36 h-36 sm:w-44 sm:h-44 rounded-2xl overflow-hidden shadow-md shrink-0 border-2 border-white">
             <img
               src="/images/team/jennifer.png"
-              alt="Dr. Jennifer Anthony, Founder & Clinical Director"
+              alt="Jennifer Anthony, Founder & Clinical Director"
               className="w-full h-full object-cover"
             />
           </div>
@@ -430,7 +430,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               Founder & Clinical Director
             </span>
             <h3 className="font-heading text-2xl sm:text-3xl font-extrabold text-[#0033A0]">
-              Dr. Jennifer Anthony, PhD, RP
+              Jennifer Anthony, PhD, RP
             </h3>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed font-normal">
               &ldquo;True health connects your physical body, mental health, brain, and digestion under one roof. When you treat the root cause instead of just covering up symptoms, you can finally feel like yourself again.&rdquo;

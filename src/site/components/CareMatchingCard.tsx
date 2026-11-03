@@ -14,7 +14,7 @@ export const CareMatchingCard: React.FC = () => {
           <span className="text-slate-400 font-normal">The right specialist on day one.</span>
         </h2>
         <p className="text-sm sm:text-base text-slate-500 mt-2 font-normal leading-relaxed">
-          Instead of guessing which doctor or service to book, Dr. Jennifer Anthony reviews your symptoms so you see the exact right specialist on your first visit.
+          Instead of guessing which doctor or service to book, Jennifer Anthony reviews your symptoms so you see the exact right specialist on your first visit.
         </p>
       </div>
 
@@ -36,7 +36,7 @@ export const CareMatchingCard: React.FC = () => {
           <div className="space-y-2">
             <span className="text-2xl font-extrabold text-[#006837] block font-heading">02</span>
             <div className="font-heading font-bold text-base text-slate-900">
-              Dr. Anthony reviews it.
+              Jennifer Anthony reviews it.
             </div>
             <p className="text-xs sm:text-sm text-slate-500 leading-relaxed">
               Our Clinical Director reviews your health history to identify the optimal care pathway.

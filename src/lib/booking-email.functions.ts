@@ -27,7 +27,8 @@ export const sendBookingEmails = createServerFn({ method: "POST" })
     const key = process.env['RESEND_API_KEY'];
     if (!key) return { ok: false, error: "Email not configured" };
     const from = process.env['RESEND_FROM'] || "Trinova Wellness Centre <onboarding@resend.dev>";
-    const clinic = process.env['CLINIC_NOTIFY_EMAIL'] || "trinovawellnesscentre@gmail.com";
+    const clinic = (process.env['CLINIC_NOTIFY_EMAIL'] || "trinovawellnesscentre@gmail.com,centretrinova@gmail.com,jranth@hotmail.com")
+      .split(/[,;\s]+/).map((e) => e.trim()).filter(Boolean);
 
     const details = `<table style="font-family:Arial,sans-serif;font-size:14px">
 ${row("Reference", data.referenceNumber)}${row("Care category", data.category)}
@@ -59,8 +60,8 @@ ${details}<p>If you have questions, simply reply to this email.</p><p>Trinova We
 
     const errors = (
       await Promise.all([
-        send({ to: [clinic], reply_to: data.patientEmail, subject: `New booking ${data.referenceNumber} – ${data.patientName}`, html: clinicHtml }),
-        send({ to: [data.patientEmail], reply_to: clinic, subject: `We received your appointment request (${data.referenceNumber})`, html: patientHtml }),
+        send({ to: clinic, reply_to: data.patientEmail, subject: `New booking ${data.referenceNumber} – ${data.patientName}`, html: clinicHtml }),
+        send({ to: [data.patientEmail], reply_to: clinic[0], subject: `We received your appointment request (${data.referenceNumber})`, html: patientHtml }),
       ])
     ).filter(Boolean);
     return { ok: errors.length === 0, error: errors.join("; ") || undefined };

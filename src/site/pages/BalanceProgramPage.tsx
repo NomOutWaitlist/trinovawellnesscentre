@@ -22,7 +22,7 @@ export const BalanceProgramPage: React.FC<BalanceProgramPageProps> = ({ onNaviga
     },
     {
       q: 'What is included in the program?',
-      a: 'Everything. Your 75-minute consultation with Dr. Jennifer Anthony, before-and-after full body scans, 6 private coaching sessions with Michelle Ching, and complete personal meal roadmaps.'
+      a: 'Everything. Your 75-minute consultation with Jennifer Anthony, before-and-after full body scans, 6 private coaching sessions with Michelle Ching, and complete personal meal roadmaps.'
     },
     {
       q: 'Can this be covered by insurance?',
@@ -136,7 +136,7 @@ export const BalanceProgramPage: React.FC<BalanceProgramPageProps> = ({ onNaviga
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 text-xs text-slate-700">
             <div className="flex items-center gap-2.5 bg-white p-3.5 rounded-xl border border-slate-200">
               <Check className="w-4 h-4 text-[#00A651] shrink-0" />
-              <span>75-minute comprehensive intake with Dr. Jennifer Anthony</span>
+              <span>75-minute comprehensive intake with Jennifer Anthony</span>
             </div>
             <div className="flex items-center gap-2.5 bg-white p-3.5 rounded-xl border border-slate-200">
               <Check className="w-4 h-4 text-[#00A651] shrink-0" />
