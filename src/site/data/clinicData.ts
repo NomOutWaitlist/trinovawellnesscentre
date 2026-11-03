@@ -26,12 +26,12 @@ export const CLINIC_INFO = {
 
 export const PRACTITIONERS: Practitioner[] = [
   {
-    id: 'dr-jennifer-anthony',
-    name: 'Dr. Jennifer Anthony',
+    id: 'jennifer-anthony',
+    name: 'Jennifer Anthony',
     credentials: 'B.A., M.A., RP, PhD',
     role: 'Founder, Clinical Director, Psychotherapist & Nutrition Specialist',
     department: 'Leadership',
-    bio: 'Dr. Jennifer Anthony brings psychological counseling and functional nutrition together to create personalized care plans. She helps people overcome long-standing anxiety, depression, trauma, and chronic pain by treating both the nervous system and body chemistry together.',
+    bio: 'Jennifer Anthony brings psychological counseling and functional nutrition together to create personalized care plans. She helps people overcome long-standing anxiety, depression, trauma, and chronic pain by treating both the nervous system and body chemistry together.',
     focus: [
       'Anxiety & depression',
       'Trauma recovery (EMDR & CBT)',
