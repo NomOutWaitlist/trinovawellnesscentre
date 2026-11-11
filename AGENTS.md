@@ -17,3 +17,6 @@
 - Staff tracking uses unlisted /staff routes without public chrome, server-verified role PINs, encrypted HttpOnly sessions, and a token-protected Google Apps Script; enforce access again in every data function because hiding links is not authorization.
 - The Google script provides durable login throttling and idempotent work writes; reject missing credentials and never fall back to browser-only work storage or unauthenticated sheet reads.
 - Nitro targets Vercel for external deployments; Lovable's managed build overrides the target for its own hosting.
+- Public route heads use src/lib/seo.ts and shared clinic/service data for a single self-referencing canonical and linked JSON-LD graph; never invent ratings, prices, medical credentials, coordinates or content dates.
+- Service detail routes read the same browser-safe service catalog as the services directory, and the services parent renders Outlet for detail paths so search content cannot drift from the displayed service.
+- Private portal and staff paths stay out of the sitemap and emit noindex; crawler restrictions never replace authorization.
