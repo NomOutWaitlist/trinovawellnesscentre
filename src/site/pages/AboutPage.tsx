@@ -15,7 +15,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigateToBook }) => {
     ? PRACTITIONERS
     : PRACTITIONERS.filter(p => p.department === selectedDepartment);
 
-  const founder = PRACTITIONERS.find(p => p.isDirector)!;
+  const founder = PRACTITIONERS.find(p => p.isDirector);
+
+  if (!founder) return null;
 
   return (
     <div className="space-y-16 pb-20">
@@ -40,7 +42,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigateToBook }) => {
           <div className="space-y-4 max-w-xl">
             {founder.imageUrl && (
               <img
-                src={founder.imageUrl}
+                width={600} height={600} decoding="async" src={founder.imageUrl}
                 alt={founder.name}
                 className="w-24 h-24 rounded-full object-cover object-top border border-slate-200"
               />
@@ -121,7 +123,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigateToBook }) => {
               <div>
                 {practitioner.imageUrl && (
                   <img
-                    src={practitioner.imageUrl}
+                    width={600} height={600} decoding="async" src={practitioner.imageUrl}
                     alt={practitioner.name}
                     loading="lazy"
                     className="w-20 h-20 rounded-full object-cover object-top mb-4 border border-slate-200"
