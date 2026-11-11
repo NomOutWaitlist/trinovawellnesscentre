@@ -49,4 +49,40 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://trinovacentre.com/youth-focus</loc>
+  </url>
+  <url>
+    <loc>https://trinovacentre.com/services/chiropractic</loc>
+  </url>
+  <url>
+    <loc>https://trinovacentre.com/services/osteopathy</loc>
+  </url>
+  <url>
+    <loc>https://trinovacentre.com/services/massage</loc>
+  </url>
+  <url>
+    <loc>https://trinovacentre.com/services/psychotherapy</loc>
+  </url>
+  <url>
+    <loc>https://trinovacentre.com/services/clinical-psychology</loc>
+  </url>
+  <url>
+    <loc>https://trinovacentre.com/services/nutrition-coaching</loc>
+  </url>
+  <url>
+    <loc>https://trinovacentre.com/services/gut-balance</loc>
+  </url>
+  <url>
+    <loc>https://trinovacentre.com/services/braincore</loc>
+  </url>
+  <url>
+    <loc>https://trinovacentre.com/services/esteck</loc>
+  </url>
+  <url>
+    <loc>https://trinovacentre.com/services/orthotics</loc>
+  </url>
+  <url>
+    <loc>https://trinovacentre.com/services/mva-wsib</loc>
+  </url>
 </urlset>

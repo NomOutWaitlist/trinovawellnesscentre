@@ -1,3 +1,4 @@
+import { pageHead } from '@/lib/seo';
 import { createFileRoute } from "@tanstack/react-router";
 import { BookPage } from "@/site/pages/BookPage";
 import { useSiteNav } from "@/site/nav";
@@ -8,14 +9,7 @@ export const Route = createFileRoute("/book")({
     ...(typeof s["concern"] === "string" ? { concern: s["concern"] } : {}),
     ...(typeof s["practitioner"] === "string" ? { practitioner: s["practitioner"] } : {}),
   }),
-  head: () => ({
-    meta: [
-      { title: 'Book an Appointment | Trinova Wellness Centre' },
-      { name: "description", content: "Request an appointment at Trinova Wellness Centre in Brampton. We'll match you with the right practitioner." },
-      { property: "og:title", content: 'Book an Appointment | Trinova Wellness Centre' },
-      { property: "og:description", content: "Request an appointment at Trinova Wellness Centre in Brampton. We'll match you with the right practitioner." },
-    ],
-  }),
+  head: () => pageHead('/book'),
   component: Page,
 });
 

@@ -20,6 +20,7 @@ import { Route as ServicesRouteImport } from './routes/services'
 import { Route as StaffRouteImport } from './routes/staff'
 import { Route as YouthFocusRouteImport } from './routes/youth-focus'
 import { Route as ProgramsBalanceRouteImport } from './routes/programs.balance'
+import { Route as ServicesServiceIdRouteImport } from './routes/services.$serviceId'
 import { Route as StaffIndexRouteImport } from './routes/staff.index'
 import { Route as StaffLogRouteImport } from './routes/staff.log'
 import { Route as StaffReportsRouteImport } from './routes/staff.reports'
@@ -79,6 +80,11 @@ const ProgramsBalanceRoute = ProgramsBalanceRouteImport.update({
   path: '/programs/balance',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ServicesServiceIdRoute = ServicesServiceIdRouteImport.update({
+  id: '/$serviceId',
+  path: '/$serviceId',
+  getParentRoute: () => ServicesRoute,
+} as any)
 const StaffIndexRoute = StaffIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -103,10 +109,11 @@ export interface FileRoutesByFullPath {
   '/contact': typeof ContactRoute
   '/portal': typeof PortalRoute
   '/referral': typeof ReferralRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/staff': typeof StaffRouteWithChildren
   '/youth-focus': typeof YouthFocusRoute
   '/programs/balance': typeof ProgramsBalanceRoute
+  '/services/$serviceId': typeof ServicesServiceIdRoute
   '/staff/log': typeof StaffLogRoute
   '/staff/reports': typeof StaffReportsRoute
   '/staff/': typeof StaffIndexRoute
@@ -119,9 +126,10 @@ export interface FileRoutesByTo {
   '/contact': typeof ContactRoute
   '/portal': typeof PortalRoute
   '/referral': typeof ReferralRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/youth-focus': typeof YouthFocusRoute
   '/programs/balance': typeof ProgramsBalanceRoute
+  '/services/$serviceId': typeof ServicesServiceIdRoute
   '/staff/log': typeof StaffLogRoute
   '/staff/reports': typeof StaffReportsRoute
   '/staff': typeof StaffIndexRoute
@@ -135,10 +143,11 @@ export interface FileRoutesById {
   '/contact': typeof ContactRoute
   '/portal': typeof PortalRoute
   '/referral': typeof ReferralRoute
-  '/services': typeof ServicesRoute
+  '/services': typeof ServicesRouteWithChildren
   '/staff': typeof StaffRouteWithChildren
   '/youth-focus': typeof YouthFocusRoute
   '/programs/balance': typeof ProgramsBalanceRoute
+  '/services/$serviceId': typeof ServicesServiceIdRoute
   '/staff/log': typeof StaffLogRoute
   '/staff/reports': typeof StaffReportsRoute
   '/staff/': typeof StaffIndexRoute
@@ -157,6 +166,7 @@ export interface FileRouteTypes {
     | '/staff'
     | '/youth-focus'
     | '/programs/balance'
+    | '/services/$serviceId'
     | '/staff/log'
     | '/staff/reports'
     | '/staff/'
@@ -172,6 +182,7 @@ export interface FileRouteTypes {
     | '/services'
     | '/youth-focus'
     | '/programs/balance'
+    | '/services/$serviceId'
     | '/staff/log'
     | '/staff/reports'
     | '/staff'
@@ -188,6 +199,7 @@ export interface FileRouteTypes {
     | '/staff'
     | '/youth-focus'
     | '/programs/balance'
+    | '/services/$serviceId'
     | '/staff/log'
     | '/staff/reports'
     | '/staff/'
@@ -201,7 +213,7 @@ export interface RootRouteChildren {
   ContactRoute: typeof ContactRoute
   PortalRoute: typeof PortalRoute
   ReferralRoute: typeof ReferralRoute
-  ServicesRoute: typeof ServicesRoute
+  ServicesRoute: typeof ServicesRouteWithChildren
   StaffRoute: typeof StaffRouteWithChildren
   YouthFocusRoute: typeof YouthFocusRoute
   ProgramsBalanceRoute: typeof ProgramsBalanceRoute
@@ -286,6 +298,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProgramsBalanceRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/services/$serviceId': {
+      id: '/services/$serviceId'
+      path: '/$serviceId'
+      fullPath: '/services/$serviceId'
+      preLoaderRoute: typeof ServicesServiceIdRouteImport
+      parentRoute: typeof ServicesRoute
+    }
     '/staff/': {
       id: '/staff/'
       path: '/'
@@ -310,6 +329,18 @@ declare module '@tanstack/react-router' {
   }
 }
 
+interface ServicesRouteChildren {
+  ServicesServiceIdRoute: typeof ServicesServiceIdRoute
+}
+
+const ServicesRouteChildren: ServicesRouteChildren = {
+  ServicesServiceIdRoute: ServicesServiceIdRoute,
+}
+
+const ServicesRouteWithChildren = ServicesRoute._addFileChildren(
+  ServicesRouteChildren,
+)
+
 interface StaffRouteChildren {
   StaffLogRoute: typeof StaffLogRoute
   StaffReportsRoute: typeof StaffReportsRoute
@@ -332,7 +363,7 @@ const rootRouteChildren: RootRouteChildren = {
   ContactRoute: ContactRoute,
   PortalRoute: PortalRoute,
   ReferralRoute: ReferralRoute,
-  ServicesRoute: ServicesRoute,
+  ServicesRoute: ServicesRouteWithChildren,
   StaffRoute: StaffRouteWithChildren,
   YouthFocusRoute: YouthFocusRoute,
   ProgramsBalanceRoute: ProgramsBalanceRoute,
