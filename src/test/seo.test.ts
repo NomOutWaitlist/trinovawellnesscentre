@@ -21,7 +21,7 @@ describe('Search identity and indexing rules', () => {
     }
   });
   it('uses published clinic hours without inventing Sunday hours', () => {
-    expect(clinicSchema().openingHoursSpecification).toEqual([
+    expect(clinicSchema()['openingHoursSpecification']).toEqual([
       { '@type': 'OpeningHoursSpecification', dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], opens: '08:30', closes: '19:30' },
       { '@type': 'OpeningHoursSpecification', dayOfWeek: 'Saturday', opens: '09:00', closes: '16:00' },
     ]);
